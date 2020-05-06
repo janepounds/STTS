@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.seedtrackingtracing.utils.Utils;
+
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String PREF_USER_FIRST_TIME = "user_first_time";
@@ -31,6 +34,21 @@ public class MainActivity extends AppCompatActivity {
         if (isUserFirstTime)
             startActivity(introIntent);
 
-
+        TextView maintext = (TextView) findViewById(R.id.main_clickable);
+        maintext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToProfile = new Intent(getBaseContext(), EditProfileActivity.class);
+                startActivity(goToProfile);
+            }
+        });
+        TextView profileDetails = (TextView) findViewById(R.id.edit_profile);
+        profileDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToProfile = new Intent(getBaseContext(), ProfileDetails.class);
+                startActivity(goToProfile);
+            }
+        });
     }
 }

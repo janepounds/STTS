@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">Seed Tracking &amp; Tracing</string>
     <string name="seed_tracking_tracing"><![CDATA[Seed Tracking & Tracing]]></string>
+    <string name="fa_check_square_o">&#xf046;</string>
+    <string name="fa_clock_o">&#xf017;</string>
+    <string name="fa_star">&#xf005;</string>
+    <string name="fa_thumbs_up">&#xf164;</string>
+    <string name="fa_comment">&#xf075;</string>
+    <string name="fa_close">&#xf00d;</string>
+    <string name="fa_check">&#xf00c;</string>
+    <string name="fa_user_plus">&#xf234;</string>
+    <string name="fa_plus">&#xf067;</string>
+    <string name="fa_user">&#xf007;</string>
+    <string name="fa_plus_circle">&#xf055;</string>
+    <string name="fa_rocket">&#xf135;</string>
+    <string name="fa_camera_retro">&#xf083;</string>
+    <string name="fa_chevron_circle_right">&#xf138;</string>
+    <string name="fa_check_circle">&#xf058;</string>
+    <string name="fa_heart">&#xf004;</string>
+    <string name="fa_angle_right">&#xf105;</string>
+    <string name="fa_play_circle_o">&#xf01d;</string>
+    <string name="fa_angle_left">&#xf104;</string>
 </resources>

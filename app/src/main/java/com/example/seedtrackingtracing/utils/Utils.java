@@ -1,4 +1,4 @@
-package com.example.seedtrackingtracing;
+package com.example.seedtrackingtracing.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

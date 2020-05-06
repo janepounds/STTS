@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "402239841323",
+    "firebase_url": "https://seed-tracking-and-tracing.firebaseio.com",
+    "project_id": "seed-tracking-and-tracing",
+    "storage_bucket": "seed-tracking-and-tracing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402239841323:android:1f931622ab89f1d3bb766e",
+        "android_client_info": {
+          "package_name": "com.example.seedtrackingtracing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402239841323-8hqggc13q3s95m3gvs7bs5qksbkeu84u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.seedtrackingtracing",
+            "certificate_hash": "1aefab19fd291e8e7862cc58c5bae9bfc7114b2c"
+          }
+        },
+        {
+          "client_id": "402239841323-9k5iksp6sc2gblepq9sjsfsk6cj7tvrm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK421ueciUQFvxNoBIrI7yOnxcQ27Gv-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402239841323-9k5iksp6sc2gblepq9sjsfsk6cj7tvrm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

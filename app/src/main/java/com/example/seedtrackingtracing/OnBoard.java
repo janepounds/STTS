@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.seedtrackingtracing.utils.Utils;
+
 import me.relex.circleindicator.CircleIndicator;
 
 public class OnBoard extends AppCompatActivity {
@@ -31,9 +33,10 @@ public class OnBoard extends AppCompatActivity {
         goToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+
                 //  update 1st time pref
                 Utils.saveSharedSetting(OnBoard.this, MainActivity.PREF_USER_FIRST_TIME, "false");
+                finish();
             }
         });
     }
