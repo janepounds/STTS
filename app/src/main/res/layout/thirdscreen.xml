@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/onboard12" />
+        android:src="@drawable/quality" />
 
     <View
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/seed_tracking_tracing"
+                android:text="Quality Assurance"
                 android:textColor="#ffffff"
                 android:textSize="35dp" />
         </LinearLayout>

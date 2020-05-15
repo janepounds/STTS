@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/onboard10" />
+        android:src="@drawable/manage_orders" />
 
     <View
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/seed_tracking_tracing"
+                android:text="Manage your orders"
                 android:textColor="#ffffff"
                 android:textSize="35dp" />
         </LinearLayout>
@@ -69,9 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit,Lorem ipsum dolor sit amet, consectetuer adipiscing elit"
+                android:text="Process and manage your orders from one place"
                 android:textColor="#ffffff"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
         </LinearLayout>
     </LinearLayout>
 

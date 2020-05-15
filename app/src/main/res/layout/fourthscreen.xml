@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/onboard13" />
+        android:src="@drawable/seed_registration" />
 
     <View
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/seed_tracking_tracing"
+                android:text="Registration"
                 android:textColor="#ffffff"
                 android:textSize="35dp" />
         </LinearLayout>
@@ -69,9 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit,Lorem ipsum dolor sit amet, consectetuer adipiscing elit"
+                android:text="Register your seed for quality analysis"
                 android:textColor="#ffffff"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
         </LinearLayout>
     </LinearLayout>
 

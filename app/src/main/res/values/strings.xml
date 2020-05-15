@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Seed Tracking &amp; Tracing</string>
-    <string name="seed_tracking_tracing"><![CDATA[Seed Tracking & Tracing]]></string>
+    <string name="app_name">Seed Track &amp; Trace</string>
+    <string name="seed_tracking_tracing"><![CDATA[Seed Track & Trace]]></string>
     <string name="fa_check_square_o">&#xf046;</string>
     <string name="fa_clock_o">&#xf017;</string>
     <string name="fa_star">&#xf005;</string>
