@@ -4,45 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blurbg"
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".SignInActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/backicon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="left|center"
-            android:layout_marginLeft="15dp"
-            android:textColor="#ffffff"
-            android:textSize="@dimen/back" />
-
-
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:gravity="center">
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/movie" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/seedsbg" />
 
     </LinearLayout>
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="3dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="18sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -57,20 +47,22 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_marginBottom="8dp"
             android:gravity="center"
+            android:background="@color/lightGrey"
             android:orientation="horizontal"
             android:weightSum="10">
 
 
-            <TextView
+            <ImageView
                 android:id="@+id/usernameicon"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
-                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:text="f"
-                android:textColor="#ffffff" />
+                android:src="@drawable/baseline_perm_identity_black_18dp" />
 
             <EditText
                 android:id="@+id/usernameedt"
@@ -80,35 +72,35 @@
                 android:background="@null"
                 android:gravity="center|left"
                 android:hint="Email Address"
-                android:textColor="#ffffff"
+                android:textColor="@android:color/black"
                 android:textColorHint="#8d8e92" />
 
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#8d8e92" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@color/lightGrey"
             android:orientation="horizontal"
             android:weightSum="10">
 
 
-            <TextView
+            <ImageView
                 android:id="@+id/passwordicon"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
-                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:text="f"
-                android:textColor="#ffffff" />
+                android:src="@drawable/baseline_lock_black_18dp"
+                android:text="@string/fa_lock" />
 
             <EditText
                 android:id="@+id/passwordedt"
@@ -119,7 +111,7 @@
                 android:gravity="center|left"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:textColor="#ffffff"
+                android:textColor="@android:color/black"
                 android:textColorHint="#8d8e92" />
 
 
@@ -133,18 +125,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="10">
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                tools:ignore="MissingConstraints" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#ff6c2c"
+            android:background="@drawable/buttonround"
             android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="10">
@@ -175,7 +175,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Don't have an account yet? Sign Up."
-                android:textColor="#ffffff" />
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
@@ -193,7 +193,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Forgot Password"
-                android:textColor="#ffffff" />
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 

@@ -3,6 +3,7 @@
     <string name="seed_tracking_tracing"><![CDATA[Seed Track & Trace]]></string>
     <string name="fa_check_square_o">&#xf046;</string>
     <string name="fa_clock_o">&#xf017;</string>
+    <string name="fa_lock">&#xf023;</string>
     <string name="fa_star">&#xf005;</string>
     <string name="fa_thumbs_up">&#xf164;</string>
     <string name="fa_comment">&#xf075;</string>
