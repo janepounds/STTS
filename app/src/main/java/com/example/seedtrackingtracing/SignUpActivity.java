@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
     EditText signUpMail, signUpPassword, confirmPassword;
-    Button signUpButton;
+    TextView signUpButton;
     TextView signInText;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
@@ -32,12 +32,14 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        //hide action bar
+        getSupportActionBar().hide();
         //firebase instance
         auth = FirebaseAuth.getInstance();
         signUpMail = (EditText) findViewById(R.id.email);
         signUpPassword = (EditText) findViewById(R.id.password);
         confirmPassword = (EditText) findViewById(R.id.rpassword);
-        signUpButton = (Button) findViewById(R.id.signupbtn);
+        signUpButton = (TextView) findViewById(R.id.signupbtn);
         signInText = (TextView) findViewById(R.id.sign_in);
         progressBar = (ProgressBar) findViewById(R.id.signup_progressBar);
         signUpButton.setOnClickListener(new View.OnClickListener() {
@@ -46,30 +48,10 @@ public class SignUpActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
                 String email = signUpMail.getText().toString();
                 String pass = signUpPassword.getText().toString();
-                String confirmPass = confirmPassword.getText().toString();
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Please enter your E-mail address", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(pass)) {
-                    Toast.makeText(getApplicationContext(), "Please enter your Password", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(confirmPass)) {
-                    Toast.makeText(getApplicationContext(), "Please confirm your Password", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if (pass.length() == 0) {
-                    Toast.makeText(getApplicationContext(), "Please enter your Password", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if (pass.length() < 8) {
-                    Toast.makeText(getApplicationContext(), "Password must be more than 8 digit", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                if (!(pass.equals(confirmPass))) {
-                    Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_LONG).show();
+                if (!validate()) {
+                    onLoginFailed();
+                    signUpButton.setEnabled(true);
                     return;
                 } else {
                     auth.createUserWithEmailAndPassword(email, pass)
@@ -98,6 +80,40 @@ public class SignUpActivity extends AppCompatActivity {
                 startActivity(inent);
             }
         });
+    }
+
+    public boolean validate() {
+        boolean valid = true;
+
+        String username = signUpMail.getText().toString();
+        String password = signUpPassword.getText().toString();
+        String password1 = confirmPassword.getText().toString();
+
+        if (username.isEmpty()) {
+            signUpMail.setError("enter a valid user name");
+            valid = false;
+        } else {
+            signUpMail.setError(null);
+        }
+
+        if (password.isEmpty() || password.length() < 4 || password.length() > 20) {
+            signUpPassword.setError("Password must be between 4 to 20 characters!");
+            valid = false;
+        } else {
+            signUpPassword.setError(null);
+        }
+        if (!(password.equals(password1))) {
+            confirmPassword.setError("Passwords do not match !");
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    public void onLoginFailed() {
+        Toast.makeText(getBaseContext(), "sign up failed", Toast.LENGTH_LONG).show();
+
+        signUpButton.setEnabled(true);
     }
 
 

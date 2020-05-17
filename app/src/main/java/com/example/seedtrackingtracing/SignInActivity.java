@@ -39,17 +39,16 @@ public class SignInActivity extends AppCompatActivity {
         SignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!validate()) {
+                    onLoginFailed();
+                    SignInButton.setEnabled(true);
+                    return;
+                }
+
                 progressBar.setVisibility(View.VISIBLE);
                 String email = SignInMail.getText().toString();
                 final String password = SignInPass.getText().toString();
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter your mail address", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter your password", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+
                 //authenticate user
                 auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SignInActivity.this, new OnCompleteListener<AuthResult>() {
@@ -58,11 +57,9 @@ public class SignInActivity extends AppCompatActivity {
                                 if (!task.isSuccessful()) {
                                     // there was an error
                                     progressBar.setVisibility(View.GONE);
-                                    if (password.length() < 8) {
-                                        Toast.makeText(getApplicationContext(), "Password must be more than 8 digit", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(getApplicationContext(), "Error, please check your username and password", Toast.LENGTH_SHORT).show();
-                                    }
+
+                                    Toast.makeText(getApplicationContext(), "Error, please check your username and password", Toast.LENGTH_SHORT).show();
+
                                 } else {
                                     Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                     startActivity(intent);
@@ -88,5 +85,34 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(inent);
             }
         });
+    }
+
+    public boolean validate() {
+        boolean valid = true;
+
+        String username = SignInMail.getText().toString();
+        String password = SignInPass.getText().toString();
+
+        if (username.isEmpty()) {
+            SignInMail.setError("enter a valid user name");
+            valid = false;
+        } else {
+            SignInMail.setError(null);
+        }
+
+        if (password.isEmpty() || password.length() < 4 || password.length() > 20) {
+            SignInPass.setError("Please enter a valid password!");
+            valid = false;
+        } else {
+            SignInPass.setError(null);
+        }
+
+        return valid;
+    }
+
+    public void onLoginFailed() {
+        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+
+        SignInButton.setEnabled(true);
     }
 }

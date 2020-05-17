@@ -5,27 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".ProfileDetails">
 
     <ImageView
         android:id="@+id/profile_pic_imageView"
         android:layout_width="match_parent"
-        android:layout_height="182dp"
-        android:foreground="@drawable/rounded_fg"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:gravity="center_vertical"
         android:src="@drawable/defavator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
         app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="2"
             android:orientation="vertical">
 
             <TextView
@@ -33,216 +36,288 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Profile"
+                android:text="user information"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="35sp" />
+                android:textSize="18sp" />
 
-            <TableRow
+            <view
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imageViewName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="1dp"
-                    app:srcCompat="@android:drawable/ic_secure" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight=".5"
+                    app:srcCompat="@drawable/account" />
 
                 <TextView
                     android:id="@+id/profile_name_textView"
-                    android:layout_width="280dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
                     android:text="First Name"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="25sp" />
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/buttonEditfName"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:layout_toRightOf="@+id/profile_name_textView"
-                    android:drawableRight="@android:drawable/ic_menu_edit" />
-            </TableRow>
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight=".5"
+                    android:drawableRight="@drawable/pencil" />
+            </LinearLayout>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageViewSurname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="1dp"
-                    app:srcCompat="@android:drawable/ic_secure" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight=".5"
+                    app:srcCompat="@drawable/account" />
+
 
                 <TextView
                     android:id="@+id/profile_surname_textView"
-                    android:layout_width="280dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_weight="2"
                     android:text="Last Name"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="25sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/buttonEditSurname"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:layout_toRightOf="@+id/profile_name_textView"
-                    android:drawableRight="@android:drawable/ic_menu_edit" />
-            </TableRow>
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight=".5"
+                    android:drawableRight="@drawable/pencil" />
+            </LinearLayout>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageViewPhone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="1dp"
-                    app:srcCompat="@android:drawable/ic_menu_call" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight=".5"
+                    app:srcCompat="@drawable/phone" />
 
                 <TextView
                     android:id="@+id/profile_phoneno_textView"
-                    android:layout_width="280dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="1dp"
                     android:text="Phone"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="25sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/buttonEditPhoneNo"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
-                    android:layout_toRightOf="@+id/profile_name_textView"
-                    android:drawableRight="@android:drawable/ic_menu_edit" />
-            </TableRow>
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight=".5"
+                    android:drawableRight="@drawable/pencil" />
+            </LinearLayout>
+            >
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageViewMail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="1dp"
-                    app:srcCompat="@android:drawable/ic_dialog_email" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight=".5"
+                    app:srcCompat="@drawable/email" />
 
                 <TextView
                     android:id="@+id/textViewEmailAdress"
-                    android:layout_width="377dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="1dp"
                     android:text="Email Address"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="25sp" />
-            </TableRow>
+                    android:textSize="16sp" />
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
+                <Button
+                    android:id="@+id/buttonEditemail"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight=".5"
+                    android:drawableRight="@drawable/pencil" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
                 <ImageView
-                    android:id="@+id/imageDistrictPhone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="1dp"
-                    app:srcCompat="@android:drawable/ic_menu_call" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight=".5"
+                    app:srcCompat="@drawable/map_marker_off" />
 
                 <TextView
                     android:id="@+id/profile_district_textView"
-                    android:layout_width="280dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="1dp"
                     android:text="District"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="25sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/buttonEditDistrict"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="1dp"
-                    android:layout_toRightOf="@+id/profile_district_textView"
-                    android:drawableRight="@android:drawable/ic_menu_edit" />
-            </TableRow>
+                    android:drawableRight="@drawable/pencil" />
+            </LinearLayout>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2">
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
                 <ImageView
-                    android:id="@+id/imageViewvillage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="1dp"
-                    app:srcCompat="@android:drawable/ic_menu_compass" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight=".5"
+                    app:srcCompat="@drawable/map_marker_off" />
+
 
                 <TextView
                     android:id="@+id/profile_village_textView"
-                    android:layout_width="280dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_weight="2"
                     android:text="Village"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="25sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/buttonEditVillage"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="1dp"
-                    android:layout_toRightOf="@+id/profile_village_textView"
-                    android:drawableRight="@android:drawable/ic_menu_edit" />
-            </TableRow>
+                    android:drawableRight="@drawable/pencil" />
+            </LinearLayout>
+
+            <view
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight=".5"
+                    app:srcCompat="@drawable/cloud_download" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/saved_forms_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Saved Forms"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/saved_forms_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Check Saved Forms"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight=".5"
+                    app:srcCompat="@drawable/account_cog" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/saved_change_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Settings"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/chang_pw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change password"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/btn_log_out"
@@ -252,8 +327,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
+                android:textColor="@color/deepOrange"
                 android:text="Logout"
-                android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>

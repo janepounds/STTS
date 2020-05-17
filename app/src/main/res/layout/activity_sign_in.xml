@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="10"
     tools:context=".SignInActivity">
 
 
@@ -19,8 +18,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@drawable/seedsbg" />
+            android:src="@drawable/loginbg" />
 
     </LinearLayout>
 
@@ -38,9 +36,8 @@
         android:layout_height="0dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_weight="7"
-        android:orientation="vertical"
-        android:weightSum="7">
+        android:layout_weight="6"
+        android:orientation="vertical">
 
 
         <LinearLayout
@@ -50,8 +47,7 @@
             android:layout_marginBottom="8dp"
             android:gravity="center"
             android:background="@color/lightGrey"
-            android:orientation="horizontal"
-            android:weightSum="10">
+            android:orientation="horizontal">
 
 
             <ImageView
@@ -87,8 +83,7 @@
             android:gravity="center"
             android:layout_marginTop="8dp"
             android:background="@color/lightGrey"
-            android:orientation="horizontal"
-            android:weightSum="10">
+            android:orientation="horizontal">
 
 
             <ImageView
@@ -99,8 +94,7 @@
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:src="@drawable/baseline_lock_black_18dp"
-                android:text="@string/fa_lock" />
+                android:src="@drawable/baseline_lock_black_18dp" />
 
             <EditText
                 android:id="@+id/passwordedt"
@@ -117,18 +111,13 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#8d8e92" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="10">
+            android:orientation="horizontal">
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -166,8 +155,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="10">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/registertv"
@@ -184,8 +172,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="10">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/resetPasswordTv"

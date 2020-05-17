@@ -21,4 +21,5 @@
     <string name="fa_angle_right">&#xf105;</string>
     <string name="fa_play_circle_o">&#xf01d;</string>
     <string name="fa_angle_left">&#xf104;</string>
+    <string name="register_new_account">Register new account</string>
 </resources>
