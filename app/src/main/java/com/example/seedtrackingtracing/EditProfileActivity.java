@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,7 +42,7 @@ import java.io.IOException;
 public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = EditProfileActivity.class.getSimpleName();
     private static int PICK_IMAGE = 123;
-    Button btnsave;
+    TextView btnsave;
     Uri imagePath;
     private FirebaseAuth firebaseAuth;
     private TextView textViewemailname;
@@ -55,6 +56,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     private FirebaseStorage firebaseStorage;
     private StorageReference storageReference;
     private FirebaseFirestore db;
+    private ProgressBar progressBar;
 
     public EditProfileActivity() {
     }
@@ -75,7 +77,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
-
+        progressBar=(ProgressBar)findViewById(R.id.profile_progressBar);
+        getSupportActionBar().hide();
         firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() == null) {
             finish();
@@ -88,7 +91,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         editTextPhoneNo = (EditText) findViewById(R.id.phone_num);
         editTextDistrict = (EditText) findViewById(R.id.pro_district);
         editTextVillage = (EditText) findViewById(R.id.pro_village);
-        btnsave = (Button) findViewById(R.id.profilebtn);
+        btnsave = (TextView) findViewById(R.id.profilebtn);
         FirebaseUser user = firebaseAuth.getCurrentUser();
         btnsave.setOnClickListener(this);
         textViewemailname = (TextView) findViewById(R.id.emailname);
@@ -116,22 +119,25 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         String village = editTextVillage.getText().toString().trim();
         UserInfo profile = new UserInfo(name, surname, phoneno, district, village);
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        // db.child(user.getUid()).setValue(profile);
-        db.collection(user.getUid())
-                .add(profile)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        progressBar.setVisibility(View.VISIBLE);
+        db.collection(user.getUid()).document("Profiles")
+                .set(profile)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                        Toast.makeText(getApplicationContext(), "User information updated", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
+                        Log.w(TAG, "Error writing document", e);
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
-        Toast.makeText(getApplicationContext(), "User information updated", Toast.LENGTH_LONG).show();
+
     }
 
     @Override

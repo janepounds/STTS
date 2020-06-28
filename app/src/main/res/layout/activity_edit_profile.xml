@@ -1,245 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
 
         </LinearLayout>
-
-
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cameraicon"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/defavator"
+            android:layout_marginTop="3dp"
+            app:civ_border_width="2dp"
+            android:layout_marginBottom="3dp"
+            app:civ_border_color="#FF000000"
+            />
+        <ProgressBar
+            android:id="@+id/profile_progressBar"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:background="@color/lightGrey"
             android:gravity="center"
             android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/image_circle_stroke">
-
-                <ImageView
-                    android:id="@+id/cameraicon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/defavator"
-                    android:textColor="#f3ca34"
-                    android:textSize="50dp" />
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:id="@+id/addprofilepic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:text="Add your profile picture"
-                android:textColor="#ffff" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
-            <TextView
+            <EditText
                 android:id="@+id/emailname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="8"
                 android:background="@null"
-                android:hint="Email"
-                android:inputType="textPersonName"
-                android:padding="5dp"
+                android:gravity="center|left"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
                 android:textColor="@android:color/black"
-                android:textColorHint="#cacaca" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#cacaca" />
-
-
+                android:textColorHint="#8d8e92" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:orientation="horizontal">
             <EditText
                 android:id="@+id/firstname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="8"
                 android:background="@null"
+                android:gravity="center|left"
                 android:hint="First Name"
                 android:inputType="textPersonName"
-                android:padding="5dp"
                 android:textColor="@android:color/black"
-                android:textColorHint="#cacaca" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#cacaca" />
-
-
+                android:textColorHint="#8d8e92" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:orientation="horizontal">
             <EditText
                 android:id="@+id/last_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="8"
                 android:background="@null"
+                android:gravity="center|left"
                 android:hint="Last Name"
                 android:inputType="textPersonName"
-                android:padding="5dp"
                 android:textColor="@android:color/black"
-                android:textColorHint="#cacaca" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#cacaca" />
-
-
+                android:textColorHint="#8d8e92" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:orientation="horizontal">
             <EditText
                 android:id="@+id/phone_num"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="8"
                 android:background="@null"
-                android:hint="Phone"
+                android:gravity="center|left"
+                android:hint="Phone Number"
                 android:inputType="phone"
-                android:padding="5dp"
                 android:textColor="@android:color/black"
-                android:textColorHint="#cacaca" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#cacaca" />
-
-
+                android:textColorHint="#8d8e92" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:orientation="horizontal">
             <EditText
                 android:id="@+id/pro_district"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="8"
                 android:background="@null"
+                android:gravity="center|left"
                 android:hint="District"
                 android:inputType="text"
-                android:padding="5dp"
                 android:textColor="@android:color/black"
-                android:textColorHint="#cacaca" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#cacaca" />
-
-
+                android:textColorHint="#8d8e92" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:orientation="horizontal">
             <EditText
                 android:id="@+id/pro_village"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="8"
                 android:background="@null"
+                android:gravity="center|left"
                 android:hint="Village"
                 android:inputType="text"
-                android:padding="5dp"
                 android:textColor="@android:color/black"
-                android:textColorHint="#cacaca" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#cacaca" />
-
-
+                android:textColorHint="#8d8e92" />
         </LinearLayout>
-
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonround"
             android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="10">
 
-            <Button
+
+            <TextView
                 android:id="@+id/profilebtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="7.5"
-                android:background="#ff6c2c"
-                android:text="Update"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="UPDATE PROFILE"
                 android:textColor="#ffffff" />
 
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -250,5 +199,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 </ScrollView>

@@ -31,6 +31,14 @@
         android:gravity="center"
         android:text="@string/register_new_account"
         android:textSize="18sp" />
+    <ProgressBar
+        android:id="@+id/signup_progressBar"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -156,14 +164,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ProgressBar
-                android:id="@+id/signup_progressBar"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="20dp"
-                android:visibility="gone"
-                tools:ignore="MissingConstraints" />
+
         </LinearLayout>
 
         <LinearLayout

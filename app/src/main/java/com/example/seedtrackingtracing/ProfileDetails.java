@@ -1,5 +1,6 @@
 package com.example.seedtrackingtracing;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -23,6 +25,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -36,12 +44,16 @@ public class ProfileDetails extends AppCompatActivity {
     private FirebaseStorage firebaseStorage;
     private TextView textViewemailname;
     private EditText editTextfName;
+    private FirebaseFirestore db;
+    private String TAG="Profile Details";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_details);
+        getSupportActionBar().hide();
+        db = FirebaseFirestore.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         editTextfName = (EditText) findViewById(R.id.et_username);
         profilePicImageView = findViewById(R.id.profile_pic_imageView);
@@ -53,7 +65,7 @@ public class ProfileDetails extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+       // DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
         StorageReference storageReference = firebaseStorage.getReference();
         // Get the image stored on Firebase via "User id/Images/Profile Pic.jpg".
         storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -70,22 +82,30 @@ public class ProfileDetails extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), SignInActivity.class));
         }
         final FirebaseUser user = firebaseAuth.getCurrentUser();
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                UserInfo userProfile = dataSnapshot.getValue(UserInfo.class);
-                profileNameTextView.setText(userProfile.firstName);
-                profileSurnameTextView.setText(userProfile.lastName);
-                profilePhonenoTextView.setText(userProfile.phoneNumber);
-                profilePhonenoTextView.setText(userProfile.phoneNumber);
-                profilePhonenoTextView.setText(userProfile.phoneNumber);
-                textViewemailname = (TextView) findViewById(R.id.textViewEmailAdress);
-                textViewemailname.setText(user.getEmail());
-            }
+        final DocumentReference docRef = db.collection(user.getUid()).document("Profiles");
 
+        final ListenerRegistration listenerRegistration = docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ProfileDetails.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    Log.w(TAG, "Listen failed.", e);
+                    return;
+                }
+
+                if (snapshot != null && snapshot.exists()) {
+                    Log.d(TAG, "Current data: " + snapshot.getData());
+                    UserInfo userProfile = snapshot.toObject(UserInfo.class);
+                    profileNameTextView.setText(userProfile.firstName);
+                    profileSurnameTextView.setText(userProfile.lastName);
+                    profilePhonenoTextView.setText(userProfile.phoneNumber);
+                    profileDistrict.setText(userProfile.district);
+                    profileVillage.setText(userProfile.village);
+                    textViewemailname = (TextView) findViewById(R.id.textViewEmailAdress);
+                    textViewemailname.setText(user.getEmail());
+                } else {
+                    Log.d(TAG, "Current data: null");
+                }
             }
         });
     }
@@ -115,8 +135,8 @@ public class ProfileDetails extends AppCompatActivity {
                 String village = profileVillage.getText().toString();
                 UserInfo userinformation = new UserInfo(name, surname, phoneno, district, village);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                databaseReference.child(user.getUid()).setValue(userinformation);
-                databaseReference.child(user.getUid()).setValue(userinformation);
+                db.collection(user.getUid()).document("Profiles").set(userinformation);
+
                 etUsername.onEditorAction(EditorInfo.IME_ACTION_DONE);
             }
         });
@@ -150,8 +170,7 @@ public class ProfileDetails extends AppCompatActivity {
                 String village = profileVillage.getText().toString();
                 UserInfo userinformation = new UserInfo(name, surname, phoneno, district, village);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                databaseReference.child(user.getUid()).setValue(userinformation);
-                databaseReference.child(user.getUid()).setValue(userinformation);
+                db.collection(user.getUid()).document("Profiles").set(userinformation);
                 etUserSurname.onEditorAction(EditorInfo.IME_ACTION_DONE);
             }
         });
@@ -184,8 +203,7 @@ public class ProfileDetails extends AppCompatActivity {
                 String village = profileVillage.getText().toString();
                 UserInfo userinformation = new UserInfo(name, surname, phoneno, district, village);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                databaseReference.child(user.getUid()).setValue(userinformation);
-                databaseReference.child(user.getUid()).setValue(userinformation);
+                db.collection(user.getUid()).document("Profiles").set(userinformation);
                 etUserPhoneno.onEditorAction(EditorInfo.IME_ACTION_DONE);
             }
         });
@@ -218,8 +236,7 @@ public class ProfileDetails extends AppCompatActivity {
                 String village = profileVillage.getText().toString();
                 UserInfo userinformation = new UserInfo(name, surname, phoneno, district, village);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                databaseReference.child(user.getUid()).setValue(userinformation);
-                databaseReference.child(user.getUid()).setValue(userinformation);
+                db.collection(user.getUid()).document("Profiles").set(userinformation);
                 etDistrict.onEditorAction(EditorInfo.IME_ACTION_DONE);
             }
         });
@@ -252,8 +269,7 @@ public class ProfileDetails extends AppCompatActivity {
                 String village = et_village.getText().toString();
                 UserInfo userinformation = new UserInfo(name, surname, phoneno, district, village);
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                databaseReference.child(user.getUid()).setValue(userinformation);
-                databaseReference.child(user.getUid()).setValue(userinformation);
+                db.collection(user.getUid()).document("Profiles").set(userinformation);
                 et_village.onEditorAction(EditorInfo.IME_ACTION_DONE);
             }
         });
@@ -263,7 +279,11 @@ public class ProfileDetails extends AppCompatActivity {
 
     public void navigateLogOut(View v) {
         FirebaseAuth.getInstance().signOut();
-        Intent inent = new Intent(this, MainActivity.class);
+        Intent inent = new Intent(this, SignInActivity.class);
         startActivity(inent);
     }
-}
+    public void changePassword(View v) {
+        Intent inent = new Intent(this, ResetPasswordActivity.class);
+        startActivity(inent);
+    }
+    }

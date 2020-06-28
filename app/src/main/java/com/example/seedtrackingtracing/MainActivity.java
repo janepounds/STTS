@@ -1,6 +1,7 @@
 package com.example.seedtrackingtracing;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         isUserFirstTime = Boolean.valueOf(Utils.readSharedSetting(MainActivity.this, PREF_USER_FIRST_TIME, "true"));
 
         Intent introIntent = new Intent(MainActivity.this, OnBoard.class);
@@ -34,15 +36,7 @@ public class MainActivity extends AppCompatActivity {
         if (isUserFirstTime)
             startActivity(introIntent);
 
-        TextView maintext = (TextView) findViewById(R.id.main_clickable);
-        maintext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToProfile = new Intent(getBaseContext(), EditProfileActivity.class);
-                startActivity(goToProfile);
-            }
-        });
-        TextView profileDetails = (TextView) findViewById(R.id.edit_profile);
+        CardView profileDetails = (CardView) findViewById(R.id.profile_card_view);
         profileDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

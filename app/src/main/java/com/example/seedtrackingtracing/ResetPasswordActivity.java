@@ -27,6 +27,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
+        getSupportActionBar().hide();
         auth = FirebaseAuth.getInstance();
         inputEmail = (EditText) findViewById(R.id.reset_email);
         btnReset = (TextView) findViewById(R.id.reset_button);

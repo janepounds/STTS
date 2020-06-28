@@ -1,0 +1,2 @@
+rootProject.name='Seed Tracking & Tracing'
+include ':app'
