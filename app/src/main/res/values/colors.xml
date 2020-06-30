@@ -6,4 +6,8 @@
     <color name="lightGrey">#eeeeee</color>
     <color name="deepOrange">#ff5722</color>
     <color name="deepGreen">#388e3c</color>
+    <color name="red">#FF2C55</color>
+    <color name="blue">#448BFF</color>
+    <color name="maroon">#78002e</color>
+    <color name="green">#009624</color>
 </resources>

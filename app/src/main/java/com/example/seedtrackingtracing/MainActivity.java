@@ -44,5 +44,44 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(goToProfile);
             }
         });
+        CardView orders=(CardView)findViewById(R.id.orders_card_view);
+        orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showorders();
+            }
+        });
+
+        CardView quality=(CardView)findViewById(R.id.quality_assurance_card_view);
+        quality.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qualityassurance();
+            }
+        });
+
+        CardView reg=(CardView)findViewById(R.id.registration_card_view);
+        quality.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registration();
+            }
+        });
+    }
+    public void showorders(){
+        Intent order=new Intent(this,PlaceOrder.class);
+
+        startActivity(order);
+    }
+
+    public void qualityassurance(){
+        Intent qua=new Intent(this,QualityAssurance.class);
+
+        startActivity(qua);
+    }
+    public void registration(){
+        Intent reg=new Intent(this,QualityAssurance.class);
+
+        startActivity(reg);
     }
 }

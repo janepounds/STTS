@@ -23,6 +23,11 @@
         </activity>
         <activity android:name=".OnBoard" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".LandingPage"/>
+        <activity android:name=".Registration"/>
+        <activity android:name=".QualityAssurance"/>
+        <activity android:name=".PlaceOrder"/>
+
     </application>
 
 </manifest>

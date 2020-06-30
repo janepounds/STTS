@@ -22,4 +22,11 @@
     <string name="fa_play_circle_o">&#xf01d;</string>
     <string name="fa_angle_left">&#xf104;</string>
     <string name="register_new_account">Register new account</string>
+    <string name="republic_of_ug">The Republic Of Uganda</string>
+    <string name="ministry">Ministry of Agriculture Animal Industry And Fisheries (MAAIF)</string>
+    <string name="seedorder">MAKE SEED ORDER</string>
+    <string name="seedcertification">National Seed Certification Services</string>
+    <string name="seedtracking">Seed Tracking and Tracing System</string>
+    <string name = "button_signin">SIGN IN</string>
+    <string name = "button_create">CREATE ACCOUNT</string>
 </resources>
