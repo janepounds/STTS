@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Seed Track &amp; Trace</string>
     <string name="seed_tracking_tracing"><![CDATA[Seed Track & Trace]]></string>
@@ -21,7 +22,7 @@
     <string name="fa_angle_right">&#xf105;</string>
     <string name="fa_play_circle_o">&#xf01d;</string>
     <string name="fa_angle_left">&#xf104;</string>
-    <string name="register_new_account">Register new account</string>
+    <string name="register_new_account">Create your Account</string>
     <string name="republic_of_ug">The Republic Of Uganda</string>
     <string name="ministry">Ministry of Agriculture Animal Industry And Fisheries (MAAIF)</string>
     <string name="seedorder">MAKE SEED ORDER</string>
@@ -29,4 +30,15 @@
     <string name="seedtracking">Seed Tracking and Tracing System</string>
     <string name = "button_signin">SIGN IN</string>
     <string name = "button_create">CREATE ACCOUNT</string>
+    <string name="approve">This App is regulated by:</string>
+    <string name="register">Sign in to your Account</string>
+
+
+    <string-array name="user_type">
+        <item>Company</item>
+        <item>Admin</item>
+        <item>Inspector</item>
+
+    </string-array>
+    <string name="usertype">Choose User Type</string>
 </resources>

@@ -65,7 +65,7 @@ public class ProfileDetails extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
-       // DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        // DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
         StorageReference storageReference = firebaseStorage.getReference();
         // Get the image stored on Firebase via "User id/Images/Profile Pic.jpg".
         storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -286,4 +286,4 @@ public class ProfileDetails extends AppCompatActivity {
         Intent inent = new Intent(this, ResetPasswordActivity.class);
         startActivity(inent);
     }
-    }
+}

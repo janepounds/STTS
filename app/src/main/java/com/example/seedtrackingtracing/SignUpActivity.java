@@ -9,9 +9,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,10 +40,18 @@ public class SignUpActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         signUpMail = (EditText) findViewById(R.id.email);
         signUpPassword = (EditText) findViewById(R.id.password);
-        confirmPassword = (EditText) findViewById(R.id.rpassword);
         signUpButton = (TextView) findViewById(R.id.signupbtn);
         signInText = (TextView) findViewById(R.id.sign_in);
         progressBar = (ProgressBar) findViewById(R.id.signup_progressBar);
+
+
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.user_type,
+                android.R.layout.simple_spinner_item);
+        //link the adapter to the spinner
+        Spinner userChoice = (Spinner) findViewById(R.id.spinner);
+        userChoice.setAdapter(adapter);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

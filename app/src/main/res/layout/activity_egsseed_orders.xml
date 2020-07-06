@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".EgsSeedOrders">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Select Crop:"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_weight="0.6"
+            android:ems="10"
+            android:spinnerMode="dropdown" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Select Crop/Seed Variety:"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_weight="0.6"
+            android:ems="10"
+            android:spinnerMode="dropdown" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Select Seed Class:"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_weight="0.6"
+            android:ems="10"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Select Inventory Status:"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_weight="0.6"
+            android:ems="10"
+            android:spinnerMode="dropdown" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Enter Quantity Ordered:"
+            android:textSize="16sp"
+            android:gravity="center"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:ems="10" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="154dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:background="@drawable/button"
+                android:backgroundTint="@color/green"
+                android:text="Submit order"
+                android:textAllCaps="false"
+                android:textColor="@color/white"></Button>
+
+            <Button
+                android:layout_width="119dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:background="@drawable/button"
+                android:backgroundTint="@color/green"
+                android:text="Save order"
+                android:textAllCaps="false"
+                android:textColor="@color/white"></Button>
+
+        </LinearLayout>
+        <Button
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="22dp"
+            android:background="@drawable/button"
+            android:text="Cancel Order"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/green"></Button>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</ScrollView>

@@ -4,41 +4,55 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class User {
-    @SerializedName("username")
+    @SerializedName("status")
     @Expose
-    private String username;
-    @SerializedName("firstname")
+    private Integer status;
+    @SerializedName("token")
     @Expose
-    private String firstname;
-    @SerializedName("lastname")
+    private String token;
+    @SerializedName("expiry")
     @Expose
-    private String lastname;
+    private String expiry;
+    @SerializedName("user_info")
+    @Expose
+    private String user_info;
 
-
-
-    public String getUsername(){
-        return username;
-    }
-    public void setUsername(String username){
-        this.username = username;
+    public User(String username, String password) {
     }
 
-    public String getFirstname(){
-        return  firstname;
+
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setFirstname(String firstname){
-        this.firstname = firstname;
-
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
-    public String getLastname(){
-
-        return lastname;
+    public String getToken() {
+        return token;
     }
 
-    public void  setLastname(String lastname){
-        this.lastname = lastname;
+    public void setToken() {
+
+        this.token = token;
+    }
+
+    public String getExpiry() {
+        return expiry;
+    }
+
+    public void setExpiry(String expiry) {
+
+        this.expiry = expiry;
+    }
+
+    public String getUser_info() {
+        return user_info;
+    }
+
+    public void setUser_info(String user_info) {
+        this.user_info = user_info;
     }
 
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/egs"
+        android:orderInCategory="1"
+        android:title="Early Generation Seeds(EGS)"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/lsb"
+        android:orderInCategory="2"
+        android:title="LSB"
+        app:showAsAction="never" />
+</menu>

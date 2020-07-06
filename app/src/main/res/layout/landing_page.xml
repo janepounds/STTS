@@ -4,173 +4,97 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
+    android:gravity="center"
     tools:context=".LandingPage">
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/coat_of_arms" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="3dp"
-        android:layout_weight="0"
-        android:gravity="center"
-        android:text="@string/republic_of_ug"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="3dp"
-        android:layout_weight="0"
-        android:gravity="center"
-        android:text="@string/ministry"
-        android:textSize="18sp" />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:src="@drawable/flag"
-        android:scaleType="fitXY"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="3dp"
-        android:layout_weight="0"
-        android:gravity="center"
-        android:text="@string/seedcertification"
-        android:textSize="18sp" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:src="@drawable/aboutus"
-        android:layout_weight="1"
-        android:scaleType="fitXY"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="3dp"
-        android:layout_weight="0"
-        android:gravity="center"
-        android:text="@string/seedtracking"
-        android:textSize="18sp" />
-
     <LinearLayout
-        android:layout_width="427dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="0"
-        android:background="@drawable/button"
-        android:backgroundTint="@color/red"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="846dp"
+        android:layout_weight="1">
 
 
         <ImageView
-            android:id="@+id/signicon"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:src="@drawable/baseline_perm_identity_black_18dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/seeds"></ImageView>
 
-        <TextView
-            android:id="@+id/button_signin"
-            android:layout_width="285dp"
-            android:layout_height="49dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_weight="0"
+        android:scaleType="fitXY"
+        android:src="@drawable/ribbon" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/approve"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="377dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="45dp"
+            android:src="@drawable/ministry_agric_logo" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="52dp"
+            android:src="@drawable/nscs_logo" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/signupbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="@string/button_signin"
-            android:textSize="25sp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="422dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="0"
-        android:background="@drawable/button"
-        android:backgroundTint="@color/blue"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-
-        <ImageView
-            android:id="@+id/signup"
-            android:layout_width="94dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:src="@drawable/baseline_person_add_alt_1_black_18dp" />
-
-        <TextView
-            android:id="@+id/button_signup"
-            android:layout_width="280dp"
-            android:layout_height="49dp"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:text="@string/button_create"
-            android:textSize="25sp"
-            android:layout_marginRight="20dp"/>
+            android:background="@drawable/button"
+            android:backgroundTint="@color/green"
+            android:text="Get Started"
+            android:textColor="@color/white"></Button>
 
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="422dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
-        android:layout_weight="0"
-        android:background="@drawable/button"
-        android:backgroundTint="@color/maroon"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-
-
-        <ImageView
-            android:id="@+id/seed"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:src="@drawable/seedorder" />
-
-        <TextView
-            android:id="@+id/button_seed"
-            android:layout_width="280dp"
-            android:layout_height="49dp"
-            android:layout_gravity="center"
-            android:text="@string/seedorder"
-            android:textSize="25sp"
-            android:layout_marginRight="20dp"/>
 
 
     </LinearLayout>
-
-
 </LinearLayout>

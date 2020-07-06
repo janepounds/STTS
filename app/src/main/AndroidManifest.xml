@@ -14,19 +14,24 @@
         <activity android:name=".SignInActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".OnBoard" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:hardwareAccelerated="true"/>
         <activity android:name=".LandingPage"/>
         <activity android:name=".Registration"/>
         <activity android:name=".QualityAssurance"/>
         <activity android:name=".PlaceOrder"/>
+        <activity android:name=".SplashActivity">
+
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+
+        </activity>
+
+        <activity android:name=".EgsSeedOrders"></activity>
+        <activity android:name=".SeedOrders"></activity>
 
     </application>
 
