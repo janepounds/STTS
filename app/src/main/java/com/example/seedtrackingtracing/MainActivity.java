@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.green)));
 
 
-        CardView signuptbtn = (CardView) findViewById(R.id.card_view_order);
+        LinearLayout signuptbtn =  findViewById(R.id.card_view_order);
         signuptbtn.setOnClickListener(new View.OnClickListener() {
 
             @Override

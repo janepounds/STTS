@@ -15,42 +15,61 @@
 
 
         <ImageView
-
-            android:src="@drawable/splash"
+            android:id="@+id/imageView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/splash" />
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/logo_white"
+                />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                android:layout_centerHorizontal="true"
+                android:text="Seed Tracking and " />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:text="Tracing System" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_centerHorizontal="true"
+
+                android:gravity="bottom"
+                android:textSize="12sp"
+                android:text="App Version 1.1"
+                android:textColor="@color/lightGrey" />
+        </LinearLayout>
 
 
 
-
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:layout_width="181dp"
-        android:layout_height="161dp"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-
-
-
-
-
-
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-
-
-
-
-
+</RelativeLayout>
 </RelativeLayout>

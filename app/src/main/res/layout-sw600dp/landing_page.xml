@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         >
         <RelativeLayout
@@ -49,22 +49,22 @@
             android:layout_height="wrap_content"
             android:text="This App is regulated by:"
             android:layout_margin="20dp"
-            android:textSize="16dp"
+            android:textSize="24sp"
             android:gravity="center"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="30dp">
             <ImageView
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:src="@drawable/ministry_agric_logo"
                 android:layout_weight="1"/>
             <ImageView
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:src="@drawable/nscs_logo"
                 android:layout_weight="1"/>
         </LinearLayout>
@@ -80,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="GET STARTED"
+                android:textSize="22sp"
                 style="@style/Button"
 
                 />

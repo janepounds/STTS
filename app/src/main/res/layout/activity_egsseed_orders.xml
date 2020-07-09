@@ -6,15 +6,14 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".EgsSeedOrders">
+    tools:context=".EgsSeedOrders"
+    android:padding="15dp">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:padding="15dp">
 
 
     <LinearLayout
@@ -112,24 +111,22 @@
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="154dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="22dp"
-                android:background="@drawable/button"
-                android:backgroundTint="@color/green"
+                android:layout_margin="10dp"
                 android:text="Submit order"
                 android:textAllCaps="false"
-                android:textColor="@color/white"></Button>
+                style="@style/Button"/>
 
             <Button
-                android:layout_width="119dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="22dp"
-                android:background="@drawable/button"
-                android:backgroundTint="@color/green"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
                 android:text="Save order"
                 android:textAllCaps="false"
-                android:textColor="@color/white"></Button>
+                style="@style/Button"/>
 
         </LinearLayout>
         <Button
@@ -137,11 +134,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="22dp"
-            android:background="@drawable/button"
+            style="@style/Button"
             android:text="Cancel Order"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/green"></Button>
+            />
 
 
     </LinearLayout>
