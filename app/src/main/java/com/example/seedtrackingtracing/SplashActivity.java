@@ -78,7 +78,7 @@ public class SplashActivity extends AppCompatActivity {
     public void edubg() {
 
 
-        YoYo.with(Techniques.RotateIn)
+        YoYo.with(Techniques.FadeIn)
                 .duration(1000)
                 .interpolate(new AccelerateDecelerateInterpolator())
                 .withListener(new Animator.AnimatorListener() {

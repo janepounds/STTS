@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Seed Track &amp; Trace</string>
+    <string name="app_name">STTS</string>
     <string name="seed_tracking_tracing"><![CDATA[Seed Track & Trace]]></string>
     <string name="fa_check_square_o">&#xf046;</string>
     <string name="fa_clock_o">&#xf017;</string>

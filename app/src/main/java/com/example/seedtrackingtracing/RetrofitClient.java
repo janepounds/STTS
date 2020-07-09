@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
     private static Retrofit retrofit;
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-    private static final String BASE_URL = "https://stts.8technologies.net/api";
+    private static final String BASE_URL = "https://stts.8technologies.net/api/";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {

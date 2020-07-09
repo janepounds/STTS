@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
     EditText signUpMail, signUpPassword, confirmPassword;
-    TextView signUpButton;
+    Button signUpButton;
     TextView signInText;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
@@ -40,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         signUpMail = (EditText) findViewById(R.id.email);
         signUpPassword = (EditText) findViewById(R.id.password);
-        signUpButton = (TextView) findViewById(R.id.signupbtn);
+        signUpButton = (Button) findViewById(R.id.signupbtn);
         signInText = (TextView) findViewById(R.id.sign_in);
         progressBar = (ProgressBar) findViewById(R.id.signup_progressBar);
 

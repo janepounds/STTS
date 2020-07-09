@@ -10,8 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="3dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:orientation="vertical">
 
@@ -29,10 +28,9 @@
             <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/loginbg"></ImageView>
+                android:src="@drawable/loginbg"/>
 
         </LinearLayout>
 
@@ -41,8 +39,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp">
+            android:layout_margin="10dp">
 
 
             <androidx.cardview.widget.CardView
@@ -54,7 +51,8 @@
                 app:cardBackgroundColor="@color/green"
                 app:cardCornerRadius="25dp"
                 android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true">
 
                 <RelativeLayout
                     android:layout_width="340dp"

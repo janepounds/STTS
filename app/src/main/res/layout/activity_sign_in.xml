@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+       >
 
         <ImageView
             android:id="@+id/eduorange"
@@ -25,12 +22,12 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/signin1"></ImageView>
+            android:src="@drawable/signin1"/>
 
         <ImageView
             android:id="@+id/edu"
-            android:layout_width="225dp"
-            android:layout_height="146dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:src="@drawable/signin_white" />
@@ -42,43 +39,45 @@
             android:layout_centerHorizontal="true"
             android:text="Sign in to continue"
             android:textColor="@android:color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_marginTop="250dp"/>
 
     </RelativeLayout>
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="22dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_weight="6"
         android:orientation="vertical">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:id="@+id/email_txt_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Email"
+                android:textColor="#000"
+                />
 
-
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/usernameedt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
-                <EditText android:id="@+id/input_reg_num"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email"
-                    android:textStyle="bold"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
+                android:hint="user@example.com"
+                android:textSize="14sp"
+                android:inputType="textEmailAddress"
+                android:layout_marginStart="0dp"/>
         </LinearLayout>
 
 
@@ -86,50 +85,44 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <com.google.android.material.textfield.TextInputLayout
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp">
-                <EditText android:id="@+id/Password"
-                    android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp">
+                <TextView
+                    android:id="@+id/password_txt_view"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:textStyle="bold"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginTop="10dp"
+                    android:text="Password"
+                    android:textColor="#000"
 
+                    />
+            </LinearLayout>
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/resetPasswordTv"
+            <EditText
+                android:id="@+id/passwordedt"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="end"
-                android:text="Want to reset Password?"
-                android:textColor="@color/green"
-                android:textAlignment="textEnd"
-                android:layout_marginTop="10dp"
-                android:textSize="15dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_height="wrap_content"
+                android:hint="**********"
+                android:textSize="14sp"
+                android:inputType="textPassword"
+                />
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/resetPasswordTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="3dp"
+            android:text="Want to reset your password?"
+            android:layout_gravity="end"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -151,26 +144,32 @@
             android:id="@+id/signinbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/button"
-            android:backgroundTint="@color/green"
-            android:text="Sign In"
-            android:textColor="@color/white"></Button>
+            android:layout_margin="15dp"
+            android:text="sign in"
+            style="@style/Button"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New User?"
+                android:layout_marginEnd="2dp"
+                />
+
 
             <TextView
                 android:id="@+id/registertv"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:gravity="center"
-                android:text="New User? Sign Up."
-                android:textColor="@color/green" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textColor="#5e8c1f"
+                android:clickable="true"
+                android:focusable="true" />
 
         </LinearLayout>
 
@@ -178,5 +177,5 @@
 
 
     </LinearLayout>
-</LinearLayout>
 </ScrollView>
+</LinearLayout>

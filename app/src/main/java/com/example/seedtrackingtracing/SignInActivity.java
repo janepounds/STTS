@@ -29,10 +29,10 @@ import retrofit2.Response;
 public class SignInActivity extends AppCompatActivity {
     private EditText SignInMail, SignInPass;
     private FirebaseAuth auth;
-    private TextView SignInButton, signuptxt, resetPassword;
+    private TextView  signuptxt, resetPassword;
     private ProgressBar progressBar;
     private ImageView eduorange;
-
+    private Button SignInButton;
 
 
     @Override
@@ -43,7 +43,7 @@ public class SignInActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         SignInMail = (EditText) findViewById(R.id.usernameedt);
         SignInPass = (EditText) findViewById(R.id.passwordedt);
-        SignInButton = (TextView) findViewById(R.id.signinbtn);
+        SignInButton = (Button) findViewById(R.id.signinbtn);
         signuptxt = (TextView) findViewById(R.id.registertv);
         resetPassword = (TextView) findViewById(R.id.resetPasswordTv);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
