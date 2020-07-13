@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.green)));
 
 
-        CardView signuptbtn = (CardView) findViewById(R.id.card_view_order);
+        TextView signuptbtn = (TextView) findViewById(R.id.seed_order_tv);
         signuptbtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
