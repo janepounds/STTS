@@ -19,8 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ResetPasswordActivity extends AppCompatActivity {
     private EditText inputEmail;
-    private TextView signUp;
-    private Button btnReset;
+    private TextView btnReset, signUp;
     private FirebaseAuth auth;
 
     @SuppressLint("WrongViewCast")
@@ -31,7 +30,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         auth = FirebaseAuth.getInstance();
         inputEmail = (EditText) findViewById(R.id.reset_email);
-        btnReset = (Button) findViewById(R.id.reset_button);
+        btnReset = (TextView) findViewById(R.id.reset_button);
         signUp = (TextView) findViewById(R.id.reset_sign_up);
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override

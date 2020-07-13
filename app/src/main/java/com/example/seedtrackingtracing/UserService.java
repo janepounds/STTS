@@ -12,7 +12,7 @@ import retrofit2.http.Path;
 
 public interface UserService {
     //login
-    @POST("login")
+    @POST("api")
     Call<User> userLogin(@Body User user);
     // @Headers({"accept: application/json",
     //         "Authorization: Token {token}"})

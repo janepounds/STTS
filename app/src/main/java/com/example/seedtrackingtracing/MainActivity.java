@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       getSupportActionBar().setTitle("Welcome," + user.getEmail());
+       getSupportActionBar().setTitle("Welcome, Joseph");
        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.green)));
 
 
-        LinearLayout signuptbtn =  findViewById(R.id.card_view_order);
+        CardView signuptbtn = (CardView) findViewById(R.id.card_view_order);
         signuptbtn.setOnClickListener(new View.OnClickListener() {
 
             @Override

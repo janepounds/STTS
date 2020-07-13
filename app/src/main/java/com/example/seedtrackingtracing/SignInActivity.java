@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.List;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,10 +30,9 @@ import retrofit2.Response;
 public class SignInActivity extends AppCompatActivity {
     private EditText SignInMail, SignInPass;
     private FirebaseAuth auth;
-    private TextView  signuptxt, resetPassword;
+    private TextView SignInButton, signuptxt, resetPassword;
     private ProgressBar progressBar;
     private ImageView eduorange;
-    private Button SignInButton;
 
 
     @Override
@@ -43,12 +43,12 @@ public class SignInActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         SignInMail = (EditText) findViewById(R.id.usernameedt);
         SignInPass = (EditText) findViewById(R.id.passwordedt);
-        SignInButton = (Button) findViewById(R.id.signinbtn);
+        SignInButton = (TextView) findViewById(R.id.signinbtn);
         signuptxt = (TextView) findViewById(R.id.registertv);
         resetPassword = (TextView) findViewById(R.id.resetPasswordTv);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         eduorange = (ImageView)findViewById(R.id.eduorange);
-        
+
         eduorange.setAdjustViewBounds(true);
         SignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,54 +72,60 @@ public class SignInActivity extends AppCompatActivity {
                 }
                 return true;
             }
-                private void doLogin() {
-                    String username = SignInMail.getText().toString();
-                    final String password = SignInPass.getText().toString();
-                    UserService service = RetrofitClient.getRetrofitInstance().create(UserService.class);
+            private void doLogin() {
+                String username = SignInMail.getText().toString();
+                final String password = SignInPass.getText().toString();
+                String action = "login";
+                UserService service = RetrofitClient.getRetrofitInstance().create(UserService.class);
 
-                    UserService loginService =
-                            ServiceGenerator.createService(UserService.class, username, password);
-                    final  User user = new User(username, password);
-                    Call<User> call= loginService.userLogin(user);
+                UserService loginService =
+                        ServiceGenerator.createService(UserService.class,username, password);
+                final  User user = new User(action,username, password);
+                Call<User> call= loginService.userLogin(user);
 
-                    call.enqueue(new Callback<User>() {
-                        @Override
-                        public void onResponse(Call <User>  call, Response<User> response) {
-                            if (response.isSuccessful()) {
-                                //  ResObj resObj = response.body();
+                call.enqueue(new Callback<User>() {
+                    @Override
+                    public void onResponse(Call <User>  call, Response<User> response) {
+                        if (response.isSuccessful()) {
+                            //  ResObj resObj = response.body();
 
-                                User resObj = response.body();
+                            User resObj = response.body();
 
-                                String token = resObj.getToken();
-
-
-                                        //login start mainmenu activity
-                                        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
-
-                                        startActivity(intent);
+                            String token = resObj.getToken();
+//                            String user_info [] = resObj.getUser_info();
+//                            String name = user_info[1];cons
 
 
+//                            Toast.makeText(SignInActivity.this, resObj, Toast.LENGTH_SHORT).show();
+                            //login start mainmenu activity
+                            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
 
-                            } else {
-                                // Toast.makeText(MainActivity.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
-                                Toast.makeText(SignInActivity.this, "The username or password is incorrect", Toast.LENGTH_SHORT).show();
-                            }
+                            startActivity(intent);
+
+
+
+                        } else {
+                            // Toast.makeText(MainActivity.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getApplicationContext(), response.message(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, response.message(), Toast.LENGTH_SHORT).show();
                         }
+                    }
 
-                        @Override
-                        public void onFailure(Call<User> call, Throwable t) {
-                            Toast.makeText(SignInActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            });
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+
+                        Toast.makeText(SignInActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
 
 
         signuptxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
-                startActivity(intent);
+                v.getContext().startActivity(intent);
             }
         });
         resetPassword.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +136,10 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 
     public boolean validate() {
         boolean valid = true;
@@ -159,6 +169,7 @@ public class SignInActivity extends AppCompatActivity {
 
         SignInButton.setEnabled(true);
     }
+
 }
 
 
