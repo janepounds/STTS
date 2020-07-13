@@ -8,7 +8,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,6 +54,28 @@ public class SignUpActivity extends AppCompatActivity {
         //link the adapter to the spinner
         Spinner userChoice = (Spinner) findViewById(R.id.spinner);
         userChoice.setAdapter(adapter);
+        userChoice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
+                if (i == 0) { // When user clicked on "Choose One" hint and the initial call.
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.hint_color));
+                    ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                    return;
+                }
+                i--;  // undo the "Choose One" hint.
+
+                // Your business logic
+
+                // i = 0 map to item0
+                // i = 1 map to item1
+                // ...
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

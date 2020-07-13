@@ -22,86 +22,67 @@
         android:orientation="vertical">
 
 
-
-
-        <TextView
+        <Spinner
+            android:id="@+id/select_crop_sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ems="10"
+            android:spinnerMode="dropdown"
             android:layout_margin="5dp"
-            android:text="Select Crop:"
-            android:textSize="16sp"
-            android:gravity="center"/>
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            />
 
         <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_weight="0.6"
-            android:ems="10"
-            android:spinnerMode="dropdown" />
-
-
-        <TextView
+            android:id="@+id/select_crop_variety_sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ems="10"
+            android:spinnerMode="dropdown"
             android:layout_margin="5dp"
-            android:text="Select Crop/Seed Variety:"
-            android:textSize="16sp"
-            android:gravity="center"/>
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            />
+
 
         <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_weight="0.6"
-            android:ems="10"
-            android:spinnerMode="dropdown" />
-
-
-        <TextView
+            android:id="@+id/select_seed_class_sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ems="10"
+            android:spinnerMode="dropdown"
             android:layout_margin="5dp"
-            android:text="Select Seed Class:"
-            android:textSize="16sp"
-            android:gravity="center"/>
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            />
 
         <Spinner
+            android:id="@+id/select_inventory_status_sp"
             android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
             android:ems="10"
-            android:spinnerMode="dropdown" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
             android:layout_margin="5dp"
-            android:text="Select Inventory Status:"
-            android:textSize="16sp"
-            android:gravity="center"/>
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            />
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_weight="0.6"
-            android:ems="10"
-            android:spinnerMode="dropdown" />
-
-
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Enter Quantity Ordered:"
-            android:textSize="16sp"
-            android:gravity="center"/>
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Enter Quantity Ordered"
+                android:textSize="16sp"
+                />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="number"
-            android:ems="10" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -116,7 +97,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Submit order"
-                android:textAllCaps="false"
                 style="@style/Button"/>
 
             <Button
@@ -125,7 +105,6 @@
                 android:layout_weight="1"
                 android:layout_margin="10dp"
                 android:text="Save order"
-                android:textAllCaps="false"
                 style="@style/Button"/>
 
         </LinearLayout>

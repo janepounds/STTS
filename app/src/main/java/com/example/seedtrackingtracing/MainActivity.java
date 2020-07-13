@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    LinearLayout seedOrder;
     public static final String PREF_USER_FIRST_TIME = "user_first_time";
     boolean isUserFirstTime;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -43,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.green)));
 
 
-        TextView signuptbtn = (TextView) findViewById(R.id.seed_order_tv);
-        signuptbtn.setOnClickListener(new View.OnClickListener() {
+        seedOrder =  findViewById(R.id.layout_seed_order);
+        seedOrder.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

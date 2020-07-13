@@ -51,7 +51,7 @@
                 android:layout_marginBottom="5dp">
 
                 <LinearLayout
-                    android:id="@+id/card_view_order"
+                    android:id="@+id/layout_seed_order"
                     android:clickable="true"
                     android:focusable="true"
                     android:layout_width="match_parent"

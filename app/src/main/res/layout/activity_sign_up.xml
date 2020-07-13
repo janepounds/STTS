@@ -125,7 +125,7 @@
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="0753 000 000"
+                android:hint="0700 000 000"
                 android:textSize="14sp"
                 android:layout_marginStart="0dp"
                 android:inputType="phone"/>
@@ -169,22 +169,12 @@
             android:layout_marginStart="5dp">
 
 
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Choose User Type:"
-                android:textColor="#000"/>
-
-
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
                 android:ems="10"
+                android:layout_marginTop="10dp"
                 android:spinnerMode="dropdown"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
                 android:prompt="@string/usertype"/>

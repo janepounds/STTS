@@ -11,4 +11,5 @@
     <color name="maroon">#78002e</color>
     <color name="green">#5E8C1F</color>
     <color name="white">#FFFFFF</color>
+    <color name="hint_color">#808080</color>
 </resources>

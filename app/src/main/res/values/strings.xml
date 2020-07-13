@@ -35,10 +35,36 @@
 
 
     <string-array name="user_type">
+        <item>Choose User Type</item>
         <item>Company</item>
         <item>Admin</item>
         <item>Inspector</item>
 
     </string-array>
+    <string-array name="select_crop">
+        <item>Select Crop</item>
+        <item>Item 1</item>
+        <item>Item 2</item>
+
+    </string-array>
+    <string-array name="select_crop_variety">
+    <item>Select Crop/Seed Variety</item>
+    <item>Item 1</item>
+    <item>Item 2</item>
+
+</string-array>
+    <string-array name="select_seed_class">
+        <item>Select Seed Class</item>
+        <item>Item 1</item>
+        <item>Item 2</item>
+
+    </string-array>
+    <string-array name="select_inventory_status">
+        <item>Select Inventory Status</item>
+        <item>Item 1</item>
+        <item>Item 2</item>
+
+    </string-array>
+
     <string name="usertype">Choose User Type</string>
 </resources>
