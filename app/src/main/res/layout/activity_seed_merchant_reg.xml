@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeedMerchantRegActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To: National Seed Certification Service:"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_margin="15dp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin= "5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin= "10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Seed merchant:"
+                android:textColor="#000"
+                />
+
+            <TextView
+                android:id="@+id/seed_merchant_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_margin="5dp"
+                android:text="Joseph Kaizzi"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Enter Applicant years of experience:"
+                android:textColor="#000"
+                />
+
+            <EditText
+                android:id="@+id/applicant_years_of_experience_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:inputType="textEmailAddress"
+                android:layout_marginStart="0dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Years of experience as:"
+                android:textColor="#000"
+                />
+
+            <EditText
+                android:id="@+id/years_of_experience_as_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                 android:textSize="14sp"
+                android:inputType="text"/>
+        </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I/We wish to apply for a certificate as a seed merchant."
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_margin="15dp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin= "5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin= "10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Applicant is applying for production of:"
+                android:textColor="#000"
+                />
+
+            <Spinner
+                android:id="@+id/crop_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:entries="@array/crops"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Specify other crops:"
+                android:textColor="#000"
+                />
+
+            <EditText
+                android:id="@+id/other_crops_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginStart="0dp"
+                android:inputType="phone"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Applicant is applying for processing of:"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:id="@+id/processing_of_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:entries="@array/crops"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Specify other crops:"
+                android:textColor="#000"
+                />
+
+            <EditText
+                android:id="@+id/other_crops2_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginStart="0dp"
+                android:inputType="phone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Applicant is applying for marketing of:"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:id="@+id/marketing_of_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:entries="@array/crops"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Specify other crops:"
+                android:textColor="#000"
+                />
+
+            <EditText
+                android:id="@+id/other_crops3_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginStart="0dp"
+                android:inputType="phone"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Do you have adequate land and equipment to handle basic needs?"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:id="@+id/basic_needs_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                android:entries="@array/status"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Do you have contractual agreement with the growers you have recruited?"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:id="@+id/recruited_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:entries="@array/status"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Do you have adequate field officers to supervise and advise growers on all operation of seed production?
+"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:id="@+id/see_production_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:entries="@array/status"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Do you have adequate and knowledgeable personel who are conversant with seed matters?"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:id="@+id/seed_matters_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:entries="@array/status"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="What is your source of breeder seed?"
+                android:textColor="#000"
+                />
+
+            <EditText
+                android:id="@+id/breeder_seed_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginStart="0dp"
+                android:inputType="phone"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="What is your source of basic seed?"
+                android:textColor="#000"
+                />
+
+            <EditText
+                android:id="@+id/basic_seed_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginStart="0dp"
+                android:inputType="phone"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Do you have adequate land for production of basic seed?"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:id="@+id/adeqaute_land_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:entries="@array/status"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="3dp"
+                android:text="Do you have an internal quality program?"
+                android:textColor="#000"
+                />
+            <Spinner
+                android:id="@+id/quality_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:spinnerMode="dropdown"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:entries="@array/status"/>
+
+
+        </LinearLayout>
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/declaration"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_margin="15dp"
+            android:scrollbars = "vertical"/>
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="07/14/2020"
+            android:inputType="date"
+            android:clickable="true"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Submit order"
+                style="@style/Button"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:text="Save order"
+                style="@style/Button"/>
+
+        </LinearLayout>
+        <Button
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="22dp"
+            style="@style/Button"
+            android:text="Cancel Order"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>
