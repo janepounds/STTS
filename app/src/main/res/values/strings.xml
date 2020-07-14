@@ -28,12 +28,14 @@
     <string name="seedorder">MAKE SEED ORDER</string>
     <string name="seedcertification">National Seed Certification Services</string>
     <string name="seedtracking">Seed Tracking and Tracing System</string>
-    <string name = "button_signin">SIGN IN</string>
-    <string name = "button_create">CREATE ACCOUNT</string>
+    <string name="button_signin">SIGN IN</string>
+    <string name="button_create">CREATE ACCOUNT</string>
     <string name="approve">This App is regulated by:</string>
     <string name="register">Sign in to your Account</string>
 
 
+    <string name="usertype">Choose User Type</string>
+    <string name="declaration">Declaration: I/WE* AT ANY TIME DURING OFFICIAL WORKING HOURS EVEN WITHOUT previous appointment will allow the inspectors entry to the seed stores and thereby provide them with the facilities necessary to carry out their inspection work as laid out in the seed and plant regulations, 2015.I/We further declare taht I/We am/are conversant with the Regulations. In addition I/We will send a list of all seed lots in our stores on a given date and or at such a date as can be mutually agreed upon between the National Seed Certification Service and ourselves.</string>
     <string-array name="user_type">
         <item>Choose User Type</item>
         <item>Company</item>
@@ -48,23 +50,34 @@
 
     </string-array>
     <string-array name="select_crop_variety">
-    <item>Select Crop/Seed Variety</item>
-    <item>Item 1</item>
-    <item>Item 2</item>
+        <item>Select Crop/Seed Variety</item>
+        <item>Item 1</item>
+        <item>Item 2</item>
 
-</string-array>
+    </string-array>
     <string-array name="select_seed_class">
         <item>Select Seed Class</item>
         <item>Item 1</item>
         <item>Item 2</item>
 
     </string-array>
+
     <string-array name="select_inventory_status">
         <item>Select Inventory Status</item>
         <item>Item 1</item>
         <item>Item 2</item>
 
     </string-array>
+    <string-array name="crops">
+        <item>Select Crop</item>
+        <item>Agricultural crops</item>
+        <item>Horticultural crops</item>
+        <item>Others specify</item>
+    </string-array>
+    <string-array name="status">
+        <item>Select</item>
+        <item>Yes</item>
+        <item>No</item>
 
-    <string name="usertype">Choose User Type</string>
+    </string-array>
 </resources>

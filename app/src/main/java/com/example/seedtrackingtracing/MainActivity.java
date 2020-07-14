@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout seedOrder;
+    LinearLayout seedOrder,registration;
     public static final String PREF_USER_FIRST_TIME = "user_first_time";
     boolean isUserFirstTime;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -46,12 +46,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         seedOrder =  findViewById(R.id.layout_seed_order);
+        registration = findViewById(R.id.layout_registration);
         seedOrder.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
                 seedorders(v);
+            }
+        });
+        registration.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+        registrations(v);
             }
         });
     }
@@ -67,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.egs:
                         Toast.makeText(MainActivity.this, "EGS", Toast.LENGTH_SHORT).show();
-                        loadegs();
+
                         return true;
                     case R.id.lsb:
                         Toast.makeText(MainActivity.this, "LSB", Toast.LENGTH_SHORT).show();
-                        loadoders();
+
                         return true;
                     default:
                         return false;
@@ -82,7 +91,37 @@ public class MainActivity extends AppCompatActivity {
         // Show the menu
         popup.show();
     }
+    private void registrations(View v) {
 
+        PopupMenu popup = new PopupMenu(this, v);
+        // Inflate the menu from xml
+        popup.getMenuInflater().inflate(R.menu.popup2, popup.getMenu());
+
+        // Setup menu item selection
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.sr4:
+                        Toast.makeText(MainActivity.this, "Form SR4", Toast.LENGTH_SHORT).show();
+                        loadsr4();
+                        return true;
+                    case R.id.sr6:
+                        Toast.makeText(MainActivity.this, "Form SR6", Toast.LENGTH_SHORT).show();
+
+                        return true;
+                    case R.id.qds:
+                        Toast.makeText(MainActivity.this, "Form QDS R1", Toast.LENGTH_SHORT).show();
+
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        // Handle dismissal with: popup.setOnDismissListener(...);
+        // Show the menu
+        popup.show();
+    }
 
 
     @Override
@@ -149,6 +188,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(signup);
         finish();
     }
+    public void loadsr4() {
+        Intent signup = new Intent(this,SeedMerchantRegActivity.class);
+        startActivity(signup);
+        finish();
+    }
+
 
     @Override
     public boolean onSupportNavigateUp(){
