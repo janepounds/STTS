@@ -106,15 +106,22 @@
 
                     />
             </LinearLayout>
-
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="#B9B8B8"
+                app:passwordToggleEnabled="true">
+                
             <EditText
                 android:id="@+id/passwordedt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="**********"
+
                 android:textSize="14sp"
                 android:inputType="textPassword"
+                app:passwordToggleEnabled="true"
                 />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -134,15 +141,17 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="20dp"
-                android:visibility="gone"
-                tools:ignore="MissingConstraints" />
+
         </LinearLayout>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/progressBar"
+            style="@style/SpinKitView.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/colorAccent" />
 
         <Button
             android:id="@+id/signinbtn"

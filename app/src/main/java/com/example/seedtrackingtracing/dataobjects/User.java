@@ -17,7 +17,7 @@ public class User {
         private String expiry;
         @SerializedName("user_info")
         @Expose
-        private String user_info [];
+        private User_Info user_info;
 
         public User(String action,String username, String password) {
         }
@@ -28,6 +28,7 @@ public class User {
         }
 
         public void setStatus(Integer status) {
+            this.status = status;
 
         }
 
@@ -36,7 +37,7 @@ public class User {
         }
 
         public void setToken() {
-
+        this.token = token;
 
         }
 
@@ -45,15 +46,18 @@ public class User {
         }
 
         public void setExpiry(String expiry) {
+            this.expiry = expiry;
 
 
         }
 
-        public String[] getUser_info() {
+        public User_Info getUser_info() {
+
             return user_info;
         }
 
-        public void setUser_info(String user_info[]) {
+        public void setUser_info(User_Info user_info) {
+            this.user_info = user_info;
 
         }
     }

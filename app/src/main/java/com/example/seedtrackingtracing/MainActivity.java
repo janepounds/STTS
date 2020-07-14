@@ -1,9 +1,11 @@
 package com.example.seedtrackingtracing;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -117,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void getProfile(){
-        Intent profile = new Intent(this, EditProfileActivity.class);
+        Intent profile = new Intent(this, ProfileDetails.class);
         startActivity(profile);
         finish();
 
@@ -154,5 +156,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp(){
         finish();
         return true;
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Really Exit?")
+                .setMessage("Are you sure you want to logout?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Intent intent = new Intent(MainActivity.this,SignInActivity.class);
+                        startActivity(intent);
+                    }
+                }).create().show();
     }
 }

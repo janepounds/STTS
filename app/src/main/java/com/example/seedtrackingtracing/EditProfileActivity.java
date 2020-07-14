@@ -80,10 +80,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         progressBar=(ProgressBar)findViewById(R.id.profile_progressBar);
         getSupportActionBar().hide();
         firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() == null) {
-            finish();
-            startActivity(new Intent(getApplicationContext(), SignInActivity.class));
-        }
+
         db = FirebaseFirestore.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         editTextName = (EditText) findViewById(R.id.firstname);
@@ -95,7 +92,6 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         FirebaseUser user = firebaseAuth.getCurrentUser();
         btnsave.setOnClickListener(this);
         textViewemailname = (TextView) findViewById(R.id.emailname);
-        textViewemailname.setText(user.getEmail());
         profileImageView = (ImageView) findViewById(R.id.cameraicon);
         firebaseStorage = FirebaseStorage.getInstance();
         storageReference = firebaseStorage.getReference();

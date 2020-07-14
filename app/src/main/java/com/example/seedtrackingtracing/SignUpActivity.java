@@ -5,8 +5,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.View;
@@ -30,6 +32,9 @@ public class SignUpActivity extends AppCompatActivity {
     TextView signInText;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    private static final String DIALOG_TITLE = "Please wait ..." ;
+    private static final String DIALOG_MESSAGE = "Creating account.." ;
+    final Handler mHandler = new Handler();
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -44,7 +49,8 @@ public class SignUpActivity extends AppCompatActivity {
         signUpPassword = (EditText) findViewById(R.id.password);
         signUpButton = (TextView) findViewById(R.id.signupbtn);
         signInText = (TextView) findViewById(R.id.sign_in);
-        progressBar = (ProgressBar) findViewById(R.id.signup_progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.INVISIBLE);
 
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
@@ -79,7 +85,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
+                showprogessDialog();
                 String email = signUpMail.getText().toString();
                 String pass = signUpPassword.getText().toString();
 
@@ -149,6 +155,38 @@ public class SignUpActivity extends AppCompatActivity {
 
         signUpButton.setEnabled(true);
     }
+    public void showprogessDialog(){
 
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setTitle(DIALOG_TITLE);
+        dialog.setMessage(DIALOG_MESSAGE);
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(true);
+        dialog.show();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5 * 1000); // Here we can place our time consuming task
+                    dismissDialog(dialog);
+                }catch(Exception e){
+                    dismissDialog(dialog);
+                }
+
+            }
+        }).start();
+
+
+    }
+
+    public void dismissDialog(final ProgressDialog pd){
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                pd.dismiss();
+            }
+        });
+    }
 
 }

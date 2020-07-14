@@ -68,46 +68,46 @@ public class ProfileDetails extends AppCompatActivity {
         // DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
         StorageReference storageReference = firebaseStorage.getReference();
         // Get the image stored on Firebase via "User id/Images/Profile Pic.jpg".
-        storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                // Using "Picasso" (http://square.github.io/picasso/) after adding the dependency in the Gradle.
-                // ".fit().centerInside()" fits the entire image into the specified area.
-                // Finally, add "READ" and "WRITE" external storage permissions in the Manifest.
-                Picasso.get().load(uri).fit().centerInside().into(profilePicImageView);
-            }
-        });
-        if (firebaseAuth.getCurrentUser() == null) {
-            finish();
-            startActivity(new Intent(getApplicationContext(), SignInActivity.class));
-        }
+//        storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//            @Override
+//            public void onSuccess(Uri uri) {
+//                // Using "Picasso" (http://square.github.io/picasso/) after adding the dependency in the Gradle.
+//                // ".fit().centerInside()" fits the entire image into the specified area.
+//                // Finally, add "READ" and "WRITE" external storage permissions in the Manifest.
+//                Picasso.get().load(uri).fit().centerInside().into(profilePicImageView);
+//            }
+//        });
+//        if (firebaseAuth.getCurrentUser() == null) {
+//            finish();
+//            startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+//        }
         final FirebaseUser user = firebaseAuth.getCurrentUser();
-        final DocumentReference docRef = db.collection(user.getUid()).document("Profiles");
+//        final DocumentReference docRef = db.collection(user.getUid()).document("Profiles");
 
-        final ListenerRegistration listenerRegistration = docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot snapshot,
-                                @Nullable FirebaseFirestoreException e) {
-                if (e != null) {
-                    Log.w(TAG, "Listen failed.", e);
-                    return;
-                }
-
-                if (snapshot != null && snapshot.exists()) {
-                    Log.d(TAG, "Current data: " + snapshot.getData());
-                    UserInfo userProfile = snapshot.toObject(UserInfo.class);
-                    profileNameTextView.setText(userProfile.firstName);
-                    profileSurnameTextView.setText(userProfile.lastName);
-                    profilePhonenoTextView.setText(userProfile.phoneNumber);
-                    profileDistrict.setText(userProfile.district);
-                    profileVillage.setText(userProfile.village);
-                    textViewemailname = (TextView) findViewById(R.id.textViewEmailAdress);
-                    textViewemailname.setText(user.getEmail());
-                } else {
-                    Log.d(TAG, "Current data: null");
-                }
-            }
-        });
+//        final ListenerRegistration listenerRegistration = docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+//            @Override
+//            public void onEvent(@Nullable DocumentSnapshot snapshot,
+//                                @Nullable FirebaseFirestoreException e) {
+//                if (e != null) {
+//                    Log.w(TAG, "Listen failed.", e);
+//                    return;
+//                }
+//
+//                if (snapshot != null && snapshot.exists()) {
+//                    Log.d(TAG, "Current data: " + snapshot.getData());
+//                    UserInfo userProfile = snapshot.toObject(UserInfo.class);
+//                    profileNameTextView.setText(userProfile.firstName);
+//                    profileSurnameTextView.setText(userProfile.lastName);
+//                    profilePhonenoTextView.setText(userProfile.phoneNumber);
+//                    profileDistrict.setText(userProfile.district);
+//                    profileVillage.setText(userProfile.village);
+//                    textViewemailname = (TextView) findViewById(R.id.textViewEmailAdress);
+//                    textViewemailname.setText(user.getEmail());
+//                } else {
+//                    Log.d(TAG, "Current data: null");
+//                }
+//            }
+//        });
     }
 
     public void buttonClickedEditName(View view) {

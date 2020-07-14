@@ -3,8 +3,10 @@ package com.example.seedtrackingtracing;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +35,10 @@ public class SignInActivity extends AppCompatActivity {
     private TextView SignInButton, signuptxt, resetPassword;
     private ProgressBar progressBar;
     private ImageView eduorange;
-
+    private static final String DIALOG_TITLE = "Please wait ..." ;
+    private static final String DIALOG_MESSAGE = "Authenticating.." ;
+    final Handler mHandler = new Handler();
+    private Toast backtoast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,7 @@ public class SignInActivity extends AppCompatActivity {
         resetPassword = (TextView) findViewById(R.id.resetPasswordTv);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         eduorange = (ImageView)findViewById(R.id.eduorange);
+        progressBar.setVisibility(View.INVISIBLE);
 
         eduorange.setAdjustViewBounds(true);
         SignInButton.setOnClickListener(new View.OnClickListener() {
@@ -73,15 +79,17 @@ public class SignInActivity extends AppCompatActivity {
                 return true;
             }
             private void doLogin() {
+                showprogessDialog();
                 String username = SignInMail.getText().toString();
                 final String password = SignInPass.getText().toString();
                 String action = "login";
-                UserService service = RetrofitClient.getRetrofitInstance().create(UserService.class);
+//                UserService service = RetrofitClient.getRetrofitInstance().ge
+//
+//                UserService loginService =
+//                        ServiceGenerator.createService(UserService.class,username, password);
+                final User user = new User(action,username,password);
 
-                UserService loginService =
-                        ServiceGenerator.createService(UserService.class,username, password);
-                final  User user = new User(action,username, password);
-                Call<User> call= loginService.userLogin(user);
+                Call<User> call= RetrofitClient.getRetrofitInstance().create(UserService.class).userLogin(user);
 
                 call.enqueue(new Callback<User>() {
                     @Override
@@ -90,13 +98,14 @@ public class SignInActivity extends AppCompatActivity {
                             //  ResObj resObj = response.body();
 
                             User resObj = response.body();
+                            String output = response.body().toString();
 
                             String token = resObj.getToken();
 //                            String user_info [] = resObj.getUser_info();
 //                            String name = user_info[1];cons
 
 
-//                            Toast.makeText(SignInActivity.this, resObj, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, output, Toast.LENGTH_SHORT).show();
                             //login start mainmenu activity
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
 
@@ -140,6 +149,39 @@ public class SignInActivity extends AppCompatActivity {
 
 
 
+public void showprogessDialog(){
+
+    final ProgressDialog dialog = new ProgressDialog(this);
+    dialog.setTitle(DIALOG_TITLE);
+    dialog.setMessage(DIALOG_MESSAGE);
+    dialog.setIndeterminate(true);
+    dialog.setCancelable(true);
+    dialog.show();
+
+    new Thread(new Runnable() {
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(5 * 1000); // Here we can place our time consuming task
+                dismissDialog(dialog);
+            }catch(Exception e){
+                dismissDialog(dialog);
+            }
+
+        }
+    }).start();
+
+
+    }
+
+    public void dismissDialog(final ProgressDialog pd){
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                pd.dismiss();
+            }
+        });
+    }
 
     public boolean validate() {
         boolean valid = true;
@@ -168,6 +210,25 @@ public class SignInActivity extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
         SignInButton.setEnabled(true);
+    }
+
+    private boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
 
 }
