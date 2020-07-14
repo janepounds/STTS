@@ -284,7 +284,9 @@
                 android:ems="10"
                 android:layout_marginTop="10dp"
                 android:spinnerMode="dropdown"
-                android:entries="@array/status"/>
+                android:entries="@array/status"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                />
 
 
         </LinearLayout>
@@ -465,22 +467,23 @@
         </LinearLayout>
         </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <TextView
+            android:id="@+id/declaration_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/declaration"
             android:textStyle="bold"
-            android:textSize="16sp"
             android:layout_margin="15dp"
             android:scrollbars = "vertical"/>
+
         <EditText
-            android:id="@+id/date"
-            android:layout_width="match_parent"
+            android:id="@+id/date_text_view"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="07/14/2020"
-            android:inputType="date"
             android:clickable="true"
-            />
+            android:focusable="false" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -510,7 +513,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="22dp"
-            style="@style/Button"
+            style="@style/Button_Cancel"
             android:text="Cancel Order"
             />
 
