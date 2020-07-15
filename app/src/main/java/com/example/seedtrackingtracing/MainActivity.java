@@ -78,11 +78,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.egs:
                         Toast.makeText(MainActivity.this, "EGS", Toast.LENGTH_SHORT).show();
-
+                        loadegs();
                         return true;
                     case R.id.lsb:
                         Toast.makeText(MainActivity.this, "LSB", Toast.LENGTH_SHORT).show();
-
+                        loadoders();
                         return true;
                     default:
                         return false;
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.sr6:
                         Toast.makeText(MainActivity.this, "Form SR6", Toast.LENGTH_SHORT).show();
-
+                        loadsr6();
                         return true;
                     case R.id.qds:
                         Toast.makeText(MainActivity.this, "Form QDS R1", Toast.LENGTH_SHORT).show();
@@ -192,6 +192,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void loadsr4() {
         Intent signup = new Intent(this,SeedMerchantRegActivity.class);
+        startActivity(signup);
+        finish();
+    }
+    public void loadsr6() {
+        Intent signup = new Intent(this,SeedGrowerRegistrationActivity.class);
         startActivity(signup);
         finish();
     }
