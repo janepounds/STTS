@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.seedtrackingtracing.dataobjects.DataRequest;
 import com.example.seedtrackingtracing.dataobjects.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -53,7 +54,7 @@ public class SignInActivity extends AppCompatActivity {
         resetPassword = (TextView) findViewById(R.id.resetPasswordTv);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         eduorange = (ImageView)findViewById(R.id.eduorange);
-        progressBar.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.GONE);
 
         eduorange.setAdjustViewBounds(true);
         SignInButton.setOnClickListener(new View.OnClickListener() {
@@ -83,13 +84,14 @@ public class SignInActivity extends AppCompatActivity {
                 String username = SignInMail.getText().toString();
                 final String password = SignInPass.getText().toString();
                 String action = "login";
-//                UserService service = RetrofitClient.getRetrofitInstance().ge
+                UserService service = RetrofitClient.getRetrofitInstance().create(UserService.class);
 //
+////
 //                UserService loginService =
 //                        ServiceGenerator.createService(UserService.class,username, password);
-                final User user = new User(action,username,password);
+//                final DataRequest user = new DataRequest(action,username,password);
 
-                Call<User> call= RetrofitClient.getRetrofitInstance().create(UserService.class).userLogin(user);
+                Call<User> call= service.userLogin(action,username,password);
 
                 call.enqueue(new Callback<User>() {
                     @Override
@@ -105,7 +107,7 @@ public class SignInActivity extends AppCompatActivity {
 //                            String name = user_info[1];cons
 
 
-                            Toast.makeText(SignInActivity.this, output, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this, token, Toast.LENGTH_SHORT).show();
                             //login start mainmenu activity
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
 
@@ -223,12 +225,8 @@ public void showprogessDialog(){
 
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2000);
+        finish();
+
     }
 
 }

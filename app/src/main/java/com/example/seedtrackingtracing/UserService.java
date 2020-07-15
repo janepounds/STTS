@@ -1,6 +1,7 @@
 package com.example.seedtrackingtracing;
 
 
+import com.example.seedtrackingtracing.dataobjects.DataRequest;
 import com.example.seedtrackingtracing.dataobjects.User;
 import com.google.gson.JsonObject;
 
@@ -16,9 +17,9 @@ import retrofit2.http.Path;
 
 public interface UserService {
     //login
-
+    @FormUrlEncoded
     @POST("api")
-    Call<User> userLogin(@Body User user);
+    Call<User> userLogin(@Field("action")String action,@Field("username")String usernme,@Field("password")String password);
     // @Headers({"accept: application/json",
     //         "Authorization: Token {token}"})
 }
