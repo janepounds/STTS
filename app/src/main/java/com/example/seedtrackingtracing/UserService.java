@@ -19,7 +19,7 @@ public interface UserService {
     //login
     @FormUrlEncoded
     @POST("api")
-    Call<User> userLogin(@Field("action")String action,@Field("username")String usernme,@Field("password")String password);
+    Call<User> userLogin(@Field("action")String action,@Field("username")String username,@Field("password")String password);
     // @Headers({"accept: application/json",
     //         "Authorization: Token {token}"})
 }
