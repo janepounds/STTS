@@ -11,6 +11,12 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -18,6 +24,11 @@ import java.util.Locale;
 public class SeedMerchantRegActivity extends AppCompatActivity {
    TextView declarationTv, dateTv;
     Calendar myCalendar = Calendar.getInstance();
+    private FirebaseStorage firebaseStorage;
+    private StorageReference storageReference;
+    private FirebaseFirestore db;
+    private DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +37,10 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.green)));
         declarationTv = findViewById(R.id.declaration_text_view);
         dateTv = findViewById(R.id.date_text_view);
-
-
         declarationTv.setMovementMethod(new ScrollingMovementMethod());
+
+        db = FirebaseFirestore.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
 
 
