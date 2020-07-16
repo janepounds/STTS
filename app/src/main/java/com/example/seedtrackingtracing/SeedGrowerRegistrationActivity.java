@@ -1,8 +1,11 @@
 package com.example.seedtrackingtracing;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Adapter;
@@ -12,13 +15,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.seedtrackingtracing.dataobjects.MerchantRegInfo;
+import com.example.seedtrackingtracing.dataobjects.SeedGrowerReg;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class SeedGrowerRegistrationActivity extends AppCompatActivity {
-
+    private static final String TAG = SeedGrowerRegistrationActivity.class.getSimpleName();
     private TextView seedGrowerTv,dateTv;
     private EditText yearsAsGrowerEt,hectaresEt,seedSourceEt,growerNumberEt,lastCropsEt;
     private Spinner cropSp, cropVarietySp,adequateIsolationSp,farmOperationsSp,certifiedSeedSp;
     private Button saveBtn,submitBtn, cancelBtn;
+    private FirebaseStorage firebaseStorage;
+    private StorageReference storageReference;
+    private FirebaseFirestore db;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +61,8 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
         submitBtn = findViewById(R.id.submit_button);
         cancelBtn = findViewById(R.id.cancel_btn);
 
-
+        db = FirebaseFirestore.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         //Spinner adapters
         ArrayAdapter arrayAdapter =  ArrayAdapter.createFromResource(this, R.array.select_crop,android.R.layout.simple_spinner_item);
         cropSp.setAdapter(arrayAdapter);
@@ -168,6 +189,7 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                seedgrowerreg();
 
             }
         });
@@ -178,5 +200,41 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void seedgrowerreg() {
+
+        Integer years_of_experience =Integer.parseInt(yearsAsGrowerEt.getText().toString().trim());
+        String crop = cropSp.getSelectedItem().toString();
+        String crop_variety = cropVarietySp.getSelectedItem().toString();
+        Integer no_of_hectares =Integer.parseInt(hectaresEt.getText().toString().trim()) ;
+        String source_of_seed = seedSourceEt.getText().toString().trim();
+        Integer grower_number = Integer.parseInt(growerNumberEt.getText().toString().trim());
+        String last_crop_of_season = lastCropsEt.getText().toString().trim();
+        String adequate_isolation= adequateIsolationSp.getSelectedItem().toString();
+        String adequate_labour =farmOperationsSp.getSelectedItem().toString();
+        String certified_seed_awareness =certifiedSeedSp.getSelectedItem().toString();
+
+        SeedGrowerReg merchantRegInfo= new SeedGrowerReg("Joseph Kaizzi",years_of_experience,crop,crop_variety, no_of_hectares,source_of_seed,grower_number,last_crop_of_season,adequate_isolation,adequate_labour,certified_seed_awareness);
+//        FirebaseUser user = firebaseAuth.getCurrentUser();
+        // db.child(user.getUid()).setValue(profile);
+        db.collection("mCBeDnxGmGQKRSU7JGVSR5We25t2").document(
+                "seed_grower_registration")
+                .set(merchantRegInfo)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error writing document", e);
+                    }
+                });
+        Toast.makeText(getApplicationContext(), "Seed grower registered successfully", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

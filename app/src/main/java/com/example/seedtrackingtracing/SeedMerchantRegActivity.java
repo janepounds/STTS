@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -371,7 +372,7 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
         String quality_program = qualityProgramSp.getSelectedItem().toString();
         String basicSeed = basicSeedSp.getSelectedItem().toString();
         MerchantRegInfo merchantRegInfo= new MerchantRegInfo("Joseph Kaizzi",years_of_experience,experience_as,productionOf,prodtn_other_crops,prossessingOf,processing_other_crops,marketingOf,markeing_other_crops,basic_needs,contractual,field_officers,personnel,source_breeder_seed,source_basic_seed,basicSeed,quality_program);
-        FirebaseUser user = firebaseAuth.getCurrentUser();
+//        FirebaseUser user = firebaseAuth.getCurrentUser();
         // db.child(user.getUid()).setValue(profile);
         db.collection("mCBeDnxGmGQKRSU7JGVSR5We25t2").document(
                 "seed_merchant_registration")
@@ -389,5 +390,7 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
                                           }
                                       });
         Toast.makeText(getApplicationContext(), "Seed merchant registered successfully", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }
