@@ -27,9 +27,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
-    EditText signUpMail, signUpPassword, confirmPassword;
+    EditText signUpMail, signUpPassword,nameEdit,phone_no;
     TextView signUpButton;
     TextView signInText;
+
     private FirebaseAuth auth;
     private ProgressBar progressBar;
     private static final String DIALOG_TITLE = "Please wait ..." ;
@@ -49,6 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpPassword = (EditText) findViewById(R.id.password);
         signUpButton = (TextView) findViewById(R.id.signupbtn);
         signInText = (TextView) findViewById(R.id.sign_in);
+        nameEdit = (EditText) findViewById(R.id.name);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
 
@@ -58,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
                 R.array.user_type,
                 android.R.layout.simple_spinner_item);
         //link the adapter to the spinner
-        Spinner userChoice = (Spinner) findViewById(R.id.spinner);
+        final Spinner userChoice = (Spinner) findViewById(R.id.spinner);
         userChoice.setAdapter(adapter);
         userChoice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -88,13 +90,16 @@ public class SignUpActivity extends AppCompatActivity {
                 showprogessDialog();
                 String email = signUpMail.getText().toString();
                 String pass = signUpPassword.getText().toString();
+                String name =  nameEdit.getText().toString();
+                String phone = phone_no.getText().toString();
+                String userType = userChoice.getSelectedItem().toString();
 
                 if (!validate()) {
                     onLoginFailed();
                     signUpButton.setEnabled(true);
                     return;
                 } else {
-                    auth.createUserWithEmailAndPassword(email, pass)
+                    auth.createUserWithEmailAndPassword(email,pass)
                             .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -127,7 +132,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         String username = signUpMail.getText().toString();
         String password = signUpPassword.getText().toString();
-        String password1 = confirmPassword.getText().toString();
+
 
         if (username.isEmpty()) {
             signUpMail.setError("enter a valid user name");
@@ -142,10 +147,7 @@ public class SignUpActivity extends AppCompatActivity {
         } else {
             signUpPassword.setError(null);
         }
-        if (!(password.equals(password1))) {
-            confirmPassword.setError("Passwords do not match !");
-            valid = false;
-        }
+
 
         return valid;
     }

@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.qds:
                         Toast.makeText(MainActivity.this, "Form QDS R1", Toast.LENGTH_SHORT).show();
-
+                        loadqds();
                         return true;
                     default:
                         return false;
@@ -202,6 +202,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void loadsr6() {
         Intent signup = new Intent(this,SeedGrowerRegistrationActivity.class);
+        startActivity(signup);
+        finish();
+    }
+    public void loadqds() {
+        Intent signup = new Intent(this,QdsProducerRegActivity.class);
         startActivity(signup);
         finish();
     }
