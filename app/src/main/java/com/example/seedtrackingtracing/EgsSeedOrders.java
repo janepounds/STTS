@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EgsSeedOrders extends AppCompatActivity {
-    Spinner cropSp,seedVarietySp,seedClassSp,inventoryStatusSp;
+    private Spinner cropSp,seedVarietySp,seedClassSp,inventoryStatusSp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

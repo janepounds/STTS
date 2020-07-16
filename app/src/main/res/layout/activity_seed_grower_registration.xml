@@ -46,7 +46,7 @@
                             />
 
                         <TextView
-                            android:id="@+id/seed_merchant_tv"
+                            android:id="@+id/seed_grower_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
@@ -72,12 +72,12 @@
                             />
 
                         <EditText
-                            android:id="@+id/years_of_experience_as_et"
+                            android:id="@+id/years_of_experience_as_grower_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="0dp"
                             android:textSize="14sp"
-                            android:inputType="text"/>
+                            android:inputType="number"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -139,7 +139,7 @@
                             />
 
                         <Spinner
-                            android:id="@+id/crop_sp"
+                            android:id="@+id/crop_variety_sp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -165,12 +165,12 @@
                             />
 
                         <EditText
-                            android:id="@+id/other_crops_et"
+                            android:id="@+id/hectares_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
                             android:layout_marginStart="0dp"
-                            android:inputType="phone"/>
+                            android:inputType="number"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -188,13 +188,15 @@
                             />
 
                         <EditText
-                            android:id="@+id/other_crops2_et"
+                            android:id="@+id/seed_source_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
                             android:layout_marginStart="0dp"
-                            android:inputType="phone"/>
+                            android:inputType="text"/>
                     </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -202,7 +204,16 @@
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:layout_margin="15dp"/>
-
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin= "5dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin= "10dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -218,12 +229,12 @@
                             />
 
                         <EditText
-                            android:id="@+id/other_crops3_et"
+                            android:id="@+id/grower_number_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
                             android:layout_marginStart="0dp"
-                            android:inputType="phone"/>
+                            android:inputType="number"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -240,12 +251,12 @@
                             />
 
                         <EditText
-                            android:id="@+id/breeder_seed_et"
+                            android:id="@+id/last_crops_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
                             android:layout_marginStart="0dp"
-                            android:inputType="phone"/>
+                            android:inputType="textMultiLine"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -262,7 +273,7 @@
                             android:textColor="#000"
                             />
                         <Spinner
-                            android:id="@+id/basic_needs_sp"
+                            android:id="@+id/adequate_isolation_sp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -289,7 +300,7 @@
                             android:textColor="#000"
                             />
                         <Spinner
-                            android:id="@+id/recruited_sp"
+                            android:id="@+id/farm_operations_sp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -311,12 +322,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="3dp"
-                            android:text="Are you aware that only seed that meets the minimum standards shall be accepted as certified seed?
-"
+                            android:text="Are you aware that only seed that meets the minimum standards shall be accepted as certified seed?"
                             android:textColor="#000"
                             />
                         <Spinner
-                            android:id="@+id/see_production_sp"
+                            android:id="@+id/certified_seed_sp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -351,7 +361,7 @@
                 >
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/submit_button"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -360,6 +370,7 @@
                     style="@style/Button"/>
 
                 <Button
+                    android:id="@+id/save_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -369,7 +380,7 @@
 
             </LinearLayout>
             <Button
-
+                android:id="@+id/cancel_btn"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
