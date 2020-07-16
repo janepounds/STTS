@@ -24,7 +24,7 @@ public class EgsSeedOrders extends AppCompatActivity {
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this,
-                R.array.select_crop,
+                R.array.crops,
                 android.R.layout.simple_spinner_item);
         //link the adapter to the spinner
         cropSp =  findViewById(R.id.select_crop_sp);

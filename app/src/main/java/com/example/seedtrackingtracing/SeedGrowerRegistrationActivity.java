@@ -43,7 +43,7 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
 
 
         //Spinner adapters
-        ArrayAdapter arrayAdapter =  ArrayAdapter.createFromResource(this, R.array.crops,android.R.layout.simple_spinner_item);
+        ArrayAdapter arrayAdapter =  ArrayAdapter.createFromResource(this, R.array.select_crop,android.R.layout.simple_spinner_item);
         cropSp.setAdapter(arrayAdapter);
         cropSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
