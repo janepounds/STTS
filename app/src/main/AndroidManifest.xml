@@ -33,6 +33,8 @@
         </activity>
         <activity android:name=".EgsSeedOrders" />
         <activity android:name=".SeedOrders" />
+
+
     </application>
 
 </manifest>

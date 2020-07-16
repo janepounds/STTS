@@ -3,8 +3,10 @@ package com.example.seedtrackingtracing;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +42,10 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
+    private static final String DIALOG_TITLE = "Please wait ..." ;
+    private static final String DIALOG_MESSAGE = "Registering seed grower.." ;
+    final Handler mHandler = new Handler();
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +67,8 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
         saveBtn = findViewById(R.id.save_button);
         submitBtn = findViewById(R.id.submit_button);
         cancelBtn = findViewById(R.id.cancel_btn);
-
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
         db = FirebaseFirestore.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         //Spinner adapters
@@ -190,6 +198,7 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 seedgrowerreg();
+                showprogessDialog();
 
             }
         });
@@ -236,5 +245,39 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Seed grower registered successfully", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+    }
+
+    public void showprogessDialog(){
+
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setTitle(DIALOG_TITLE);
+        dialog.setMessage(DIALOG_MESSAGE);
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(true);
+        dialog.show();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5 * 1000); // Here we can place our time consuming task
+                    dismissDialog(dialog);
+                }catch(Exception e){
+                    dismissDialog(dialog);
+                }
+
+            }
+        }).start();
+
+
+    }
+
+    public void dismissDialog(final ProgressDialog pd){
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                pd.dismiss();
+            }
+        });
     }
 }
