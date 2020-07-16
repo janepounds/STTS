@@ -274,4 +274,12 @@ public class QdsProducerRegActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(QdsProducerRegActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
 }

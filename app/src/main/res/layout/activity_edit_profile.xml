@@ -23,11 +23,11 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:src="@drawable/defavator"
+            android:src="@drawable/person"
             android:layout_marginTop="3dp"
             app:civ_border_width="2dp"
             android:layout_marginBottom="3dp"
-            app:civ_border_color="#FF000000"
+            
             />
         <ProgressBar
             android:id="@+id/profile_progressBar"
@@ -174,10 +174,11 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_marginTop="20dp"
-            android:background="@drawable/buttonround"
+            android:background="@drawable/button"
             android:gravity="center"
             android:orientation="horizontal"
-            android:weightSum="10">
+            android:weightSum="10"
+            android:backgroundTint="@color/green">
 
 
             <TextView

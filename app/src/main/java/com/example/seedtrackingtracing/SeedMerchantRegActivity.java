@@ -438,4 +438,11 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(SeedMerchantRegActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
 }

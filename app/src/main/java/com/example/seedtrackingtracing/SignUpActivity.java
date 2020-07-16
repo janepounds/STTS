@@ -51,6 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpButton = (TextView) findViewById(R.id.signupbtn);
         signInText = (TextView) findViewById(R.id.sign_in);
         nameEdit = (EditText) findViewById(R.id.name);
+        phone_no = (EditText)findViewById(R.id.phone);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
 
@@ -189,6 +190,13 @@ public class SignUpActivity extends AppCompatActivity {
                 pd.dismiss();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(SignUpActivity.this,SignInActivity.class);
+        startActivity(intent);
     }
 
 }

@@ -286,4 +286,11 @@ public class ProfileDetails extends AppCompatActivity {
         Intent inent = new Intent(this, ResetPasswordActivity.class);
         startActivity(inent);
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(ProfileDetails.this,MainActivity.class);
+        startActivity(intent);
+    }
 }

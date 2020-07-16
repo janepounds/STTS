@@ -225,7 +225,7 @@ public void showprogessDialog(){
 
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
-        finish();
+        super.onBackPressed();
 
     }
 

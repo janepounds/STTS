@@ -280,4 +280,10 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(SeedGrowerRegistrationActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
 }
