@@ -152,7 +152,7 @@
                         android:layout_height="80dp"
                         android:padding="15dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/seed_order_icon" />
+                        android:src="@drawable/reg" />
 
                     <TextView
                         android:id="@+id/registration_tv"

@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         PopupMenu popup = new PopupMenu(this, v);
         // Inflate the menu from xml
         popup.getMenuInflater().inflate(R.menu.popup2, popup.getMenu());
-        popup.setGravity(Gravity.CENTER);
+
         // Setup menu item selection
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
