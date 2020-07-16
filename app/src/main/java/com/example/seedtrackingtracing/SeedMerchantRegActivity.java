@@ -1,5 +1,6 @@
 package com.example.seedtrackingtracing;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -7,6 +8,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,18 +18,27 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.seedtrackingtracing.dataobjects.MerchantRegInfo;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
 public class SeedMerchantRegActivity extends AppCompatActivity {
+    private static final String TAG = SeedMerchantRegActivity.class.getSimpleName();
    private TextView declarationTv, dateTv,seedMerchantTv;
    private EditText yearsEt, experienceAsEt,productionOtherCropsEt, processingOtherCropsEt,marketingOtherCrops2Et,breederSeedEt,basicSeedEt;
    private Spinner productionOfSp,processingOfSp,marketingOfSp,basicNeedsSp,recruitedSp,seedProductionSp,seedMattersSp,basicSeedSp,qualityProgramSp;
@@ -37,6 +48,7 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
     private StorageReference storageReference;
     private FirebaseFirestore db;
     private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +125,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                merchantreg();
 
             }
         });
@@ -329,5 +343,44 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.ENGLISH);
 
         dateTv.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    private void merchantreg() {
+
+        Integer years_of_experience =Integer.parseInt(yearsEt.getText().toString().trim());
+        String experience_as = experienceAsEt.getText().toString().trim();
+        String prodtn_other_crops = productionOtherCropsEt.getText().toString().trim();
+        String processing_other_crops = processingOtherCropsEt.getText().toString().trim();
+        String markeing_other_crops = marketingOtherCrops2Et.getText().toString().trim();
+        String source_breeder_seed = breederSeedEt.getText().toString().trim();
+        String source_basic_seed = basicSeedEt.getText().toString().trim();
+        String productionOf = productionOfSp.getSelectedItem().toString();
+        String prossessingOf =processingOfSp.getSelectedItem().toString();
+        String marketingOf =marketingOfSp.getSelectedItem().toString();
+        String basic_needs =basicNeedsSp.getSelectedItem().toString();
+        String contractual = recruitedSp.getSelectedItem().toString();
+        String field_officers = seedProductionSp.getSelectedItem().toString();
+        String personnel = seedMattersSp.getSelectedItem().toString();
+        String quality_program = qualityProgramSp.getSelectedItem().toString();
+        String basicSeed = basicSeedSp.getSelectedItem().toString();
+        MerchantRegInfo merchantRegInfo= new MerchantRegInfo("Joseph Kaizzi",years_of_experience,experience_as,productionOf,prodtn_other_crops,prossessingOf,processing_other_crops,marketingOf,markeing_other_crops,basic_needs,contractual,field_officers,personnel,source_breeder_seed,source_basic_seed,basicSeed,quality_program);
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        // db.child(user.getUid()).setValue(profile);
+        db.collection("mCBeDnxGmGQKRSU7JGVSR5We25t2").document(
+                "seed_merchant_registration")
+                .set(merchantRegInfo)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                                          @Override
+                                          public void onFailure(@NonNull Exception e) {
+                                              Log.w(TAG, "Error writing document", e);
+                                          }
+                                      });
+        Toast.makeText(getApplicationContext(), "Seed merchant registered successfully", Toast.LENGTH_LONG).show();
     }
 }
