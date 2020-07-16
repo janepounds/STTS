@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:inputType="textEmailAddress"
+                android:inputType="number"
                 android:layout_marginStart="0dp"/>
         </LinearLayout>
 
@@ -164,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_marginStart="0dp"
-                android:inputType="phone"/>
+                android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -212,7 +212,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_marginStart="0dp"
-                android:inputType="phone"/>
+                android:inputType="text"/>
         </LinearLayout>
 
         <LinearLayout
@@ -261,7 +261,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_marginStart="0dp"
-                android:inputType="phone"/>
+                android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -332,7 +332,7 @@
                 android:textColor="#000"
                 />
             <Spinner
-                android:id="@+id/see_production_sp"
+                android:id="@+id/seed_production_sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -389,7 +389,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_marginStart="0dp"
-                android:inputType="phone"/>
+                android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -411,7 +411,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_marginStart="0dp"
-                android:inputType="phone"/>
+                android:inputType="text"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -428,7 +428,7 @@
                 android:textColor="#000"
                 />
             <Spinner
-                android:id="@+id/adeqaute_land_sp"
+                android:id="@+id/basic_seed_sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -491,7 +491,7 @@
             >
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/submit_order_btn"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -500,6 +500,7 @@
                 style="@style/Button"/>
 
             <Button
+                android:id="@+id/save_order_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -509,7 +510,7 @@
 
         </LinearLayout>
         <Button
-
+            android:id="@+id/cancel_order_btn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="22dp"

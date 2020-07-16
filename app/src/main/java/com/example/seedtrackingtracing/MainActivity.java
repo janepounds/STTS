@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
     public void loadsr4() {
-        Intent signup = new Intent(this,RunForm.class);
+        Intent signup = new Intent(this,SeedMerchantRegActivity.class);
         startActivity(signup);
         finish();
     }
