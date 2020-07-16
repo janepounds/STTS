@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -66,11 +68,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    @SuppressLint("NewApi")
     private void seedorders(View v) {
 
         PopupMenu popup = new PopupMenu(this, v);
         // Inflate the menu from xml
         popup.getMenuInflater().inflate(R.menu.popup, popup.getMenu());
+        popup.setGravity(Gravity.CENTER);
 
         // Setup menu item selection
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -93,12 +97,13 @@ public class MainActivity extends AppCompatActivity {
         // Show the menu
         popup.show();
     }
+    @SuppressLint("NewApi")
     private void registrations(View v) {
 
         PopupMenu popup = new PopupMenu(this, v);
         // Inflate the menu from xml
         popup.getMenuInflater().inflate(R.menu.popup2, popup.getMenu());
-
+        popup.setGravity(Gravity.CENTER);
         // Setup menu item selection
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {

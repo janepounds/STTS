@@ -46,9 +46,12 @@
     </string-array>
     <string-array name="select_crop">
         <item>Select Crop</item>
-        <item>Item 1</item>
-        <item>Item 2</item>
-
+        <item>Bush Beans</item>
+        <item>Climbing Beans</item>
+        <item>Ground Nuts</item>
+        <item>Maize</item>
+        <item>Sim Sim</item>
+        <item>Soya Beans</item>
     </string-array>
     <string-array name="select_crop_variety">
         <item>Select Crop/Seed Variety</item>

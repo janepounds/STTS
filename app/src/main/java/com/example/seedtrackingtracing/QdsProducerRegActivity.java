@@ -58,7 +58,53 @@ public class QdsProducerRegActivity extends AppCompatActivity {
         });
 
         //Spinner Adapters
+
         ArrayAdapter arrayAdapter =  ArrayAdapter.createFromResource(this, R.array.status,android.R.layout.simple_spinner_item);
+
+        adequateIsolationSp.setAdapter(arrayAdapter);
+        adequateIsolationSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
+                if (i == 0) { // When user clicked on "Choose One" hint and the initial call.
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.hint_color));
+                    ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                    return;
+                }
+                i--;  // undo the "Choose One" hint.
+
+                // Your business logic
+
+                // i = 0 map to item0
+                // i = 1 map to item1
+                // ...
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+        farmOperationsSp.setAdapter(arrayAdapter);
+        farmOperationsSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
+                if (i == 0) { // When user clicked on "Choose One" hint and the initial call.
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.hint_color));
+                    ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                    return;
+                }
+                i--;  // undo the "Choose One" hint.
+
+                // Your business logic
+
+                // i = 0 map to item0
+                // i = 1 map to item1
+                // ...
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
         certifiedSeedSp.setAdapter(arrayAdapter);
         certifiedSeedSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
