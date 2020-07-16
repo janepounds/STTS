@@ -75,5 +75,10 @@ dependencies {
 
     implementation 'com.github.ybq:Android-SpinKit:1.2.0'
 
+<<<<<<< HEAD
+=======
+implementation 'com.nerdstone:neat-form-core:1.1.2'
+
+>>>>>>> ec053ef51ea91685d7bde2ee58551d5293d3f33b
 }
 apply plugin: 'com.google.gms.google-services'

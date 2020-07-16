@@ -17,6 +17,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -27,6 +33,11 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
    private Spinner productionOfSp,processingOfSp,marketingOfSp,basicNeedsSp,recruitedSp,seedProductionSp,seedMattersSp,basicSeedSp,qualityProgramSp;
    private Button saveBtn, submitBtn, cancelBtn;
     Calendar myCalendar = Calendar.getInstance();
+    private FirebaseStorage firebaseStorage;
+    private StorageReference storageReference;
+    private FirebaseFirestore db;
+    private DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +47,7 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
 
         declarationTv = findViewById(R.id.declaration_text_view);
         dateTv = findViewById(R.id.date_text_view);
+
         seedMerchantTv = findViewById(R.id.seed_merchant_tv);
         yearsEt = findViewById(R.id.applicant_years_of_experience_et);
         experienceAsEt = findViewById(R.id.years_of_experience_as_et);
@@ -58,7 +70,11 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
         cancelBtn = findViewById(R.id.cancel_order_btn);
 
 
+
         declarationTv.setMovementMethod(new ScrollingMovementMethod());
+
+        db = FirebaseFirestore.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
 
 
