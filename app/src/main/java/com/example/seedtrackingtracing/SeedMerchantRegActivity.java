@@ -139,7 +139,7 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
 
         //Spinner Adapters
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.crops, android.R.layout.simple_spinner_item);
         productionOfSp.setAdapter(adapter);
         productionOfSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -162,7 +162,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
 
-        processingOfSp.setAdapter(adapter);
+        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this,R.array.crops, android.R.layout.simple_spinner_item);
+        processingOfSp.setAdapter(adapter2);
         processingOfSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
@@ -184,7 +185,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
 
-        marketingOfSp.setAdapter(adapter);
+        ArrayAdapter adapter3 = ArrayAdapter.createFromResource(this,R.array.crops, android.R.layout.simple_spinner_item);
+        marketingOfSp.setAdapter(adapter3);
         marketingOfSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
@@ -205,8 +207,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
-
-        basicSeedSp.setAdapter(adapter);
+        ArrayAdapter adapter4 = ArrayAdapter.createFromResource(this,R.array.status, android.R.layout.simple_spinner_item);
+        basicSeedSp.setAdapter(adapter4);
         basicSeedSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
@@ -228,7 +230,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
 
-        basicNeedsSp.setAdapter(adapter);
+        ArrayAdapter adapter5 = ArrayAdapter.createFromResource(this,R.array.status, android.R.layout.simple_spinner_item);
+        basicNeedsSp.setAdapter(adapter5);
         basicNeedsSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
@@ -250,7 +253,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
 
-        recruitedSp.setAdapter(adapter);
+        ArrayAdapter adapter6 = ArrayAdapter.createFromResource(this,R.array.status, android.R.layout.simple_spinner_item);
+        recruitedSp.setAdapter(adapter6);
         recruitedSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
@@ -272,7 +276,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
 
-        seedProductionSp.setAdapter(adapter);
+        ArrayAdapter adapter7 = ArrayAdapter.createFromResource(this,R.array.status, android.R.layout.simple_spinner_item);
+        seedProductionSp.setAdapter(adapter7);
         seedProductionSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
@@ -294,7 +299,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
 
-        seedMattersSp.setAdapter(adapter);
+        ArrayAdapter adapter8 = ArrayAdapter.createFromResource(this,R.array.status, android.R.layout.simple_spinner_item);
+        seedMattersSp.setAdapter(adapter8);
         seedMattersSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
@@ -315,7 +321,8 @@ public class SeedMerchantRegActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) { }
         });
-        qualityProgramSp.setAdapter(adapter);
+        ArrayAdapter adapter9 = ArrayAdapter.createFromResource(this,R.array.status, android.R.layout.simple_spinner_item);
+        qualityProgramSp.setAdapter(adapter9);
         qualityProgramSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {

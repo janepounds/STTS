@@ -3,6 +3,11 @@ package com.example.seedtrackingtracing;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -35,5 +40,143 @@ public class SeedGrowerRegistrationActivity extends AppCompatActivity {
         saveBtn = findViewById(R.id.save_button);
         submitBtn = findViewById(R.id.submit_button);
         cancelBtn = findViewById(R.id.cancel_btn);
+
+
+        //Spinner adapters
+        ArrayAdapter arrayAdapter =  ArrayAdapter.createFromResource(this, R.array.crops,android.R.layout.simple_spinner_item);
+        cropSp.setAdapter(arrayAdapter);
+        cropSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
+                if (i == 0) { // When user clicked on "Choose One" hint and the initial call.
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.hint_color));
+                    ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                    return;
+                }
+                i--;  // undo the "Choose One" hint.
+
+                // Your business logic
+
+                // i = 0 map to item0
+                // i = 1 map to item1
+                // ...
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+        ArrayAdapter arrayAdapter1 =  ArrayAdapter.createFromResource(this, R.array.select_crop_variety,android.R.layout.simple_spinner_item);
+        cropVarietySp.setAdapter(arrayAdapter1);
+        cropVarietySp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
+                if (i == 0) { // When user clicked on "Choose One" hint and the initial call.
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.hint_color));
+                    ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                    return;
+                }
+                i--;  // undo the "Choose One" hint.
+
+                // Your business logic
+
+                // i = 0 map to item0
+                // i = 1 map to item1
+                // ...
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+        ArrayAdapter arrayAdapter2 =  ArrayAdapter.createFromResource(this, R.array.status,android.R.layout.simple_spinner_item);
+        adequateIsolationSp.setAdapter(arrayAdapter2);
+        adequateIsolationSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
+                if (i == 0) { // When user clicked on "Choose One" hint and the initial call.
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.hint_color));
+                    ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                    return;
+                }
+                i--;  // undo the "Choose One" hint.
+
+                // Your business logic
+
+                // i = 0 map to item0
+                // i = 1 map to item1
+                // ...
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+        ArrayAdapter arrayAdapter3 =  ArrayAdapter.createFromResource(this, R.array.status,android.R.layout.simple_spinner_item);
+        farmOperationsSp.setAdapter(arrayAdapter3);
+        farmOperationsSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
+                if (i == 0) { // When user clicked on "Choose One" hint and the initial call.
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.hint_color));
+                    ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                    return;
+                }
+                i--;  // undo the "Choose One" hint.
+
+                // Your business logic
+
+                // i = 0 map to item0
+                // i = 1 map to item1
+                // ...
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+        ArrayAdapter arrayAdapter4 =  ArrayAdapter.createFromResource(this, R.array.status,android.R.layout.simple_spinner_item);
+        certifiedSeedSp.setAdapter(arrayAdapter4);
+        certifiedSeedSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long Id) {
+                if (i == 0) { // When user clicked on "Choose One" hint and the initial call.
+                    ((TextView) view).setTextColor(getResources().getColor(R.color.hint_color));
+                    ((TextView) view).setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                    return;
+                }
+                i--;  // undo the "Choose One" hint.
+
+                // Your business logic
+
+                // i = 0 map to item0
+                // i = 1 map to item1
+                // ...
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+        //Button onClickListener
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 }

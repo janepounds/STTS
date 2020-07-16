@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SeedGrowerRegistrationActivity"></activity>
+        <activity android:name=".QdsProducerRegActivity"></activity>
+        <activity android:name=".SeedGrowerRegistrationActivity" />
         <activity android:name=".SeedMerchantRegActivity" />
         <activity android:name=".ProfileDetails" />
         <activity android:name=".ResetPasswordActivity" />

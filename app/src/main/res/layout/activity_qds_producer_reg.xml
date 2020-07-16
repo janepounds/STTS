@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeedGrowerRegistrationActivity">
+    tools:context=".QdsProducerRegActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -41,12 +41,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="3dp"
-                            android:text="Seed grower:"
+                            android:text="Seed producer:"
                             android:textColor="#000"
                             />
 
                         <TextView
-                            android:id="@+id/seed_grower_tv"
+                            android:id="@+id/seed_producer_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
@@ -67,17 +67,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="3dp"
-                            android:text="Years of experience as a seed grower:"
+                            android:text="Enter location of farm:"
                             android:textColor="#000"
                             />
 
                         <EditText
-                            android:id="@+id/years_of_experience_as_grower_et"
+                            android:id="@+id/location_of_farm_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="0dp"
                             android:textSize="14sp"
-                            android:inputType="number"/>
+                            android:inputType="text"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -89,21 +89,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="3dp"
-                            android:text="Select crop:"
+                            android:text="Enter Applicant years of experience as a seed grower:"
                             android:textColor="#000"
                             />
 
-                        <Spinner
-                            android:id="@+id/crop_spinner"
+                        <EditText
+                            android:id="@+id/years_of_experience_as_grower_et_producer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:layout_marginTop="10dp"
-                            android:spinnerMode="dropdown"
-                            style="@style/Widget.AppCompat.Spinner.Underlined"
-                            android:entries="@array/crops"/>
-
-
+                            android:layout_marginStart="0dp"
+                            android:textSize="14sp"
+                            android:inputType="number"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -113,7 +109,19 @@
                 android:text="I/We wish to apply for a license to produce certified seed as indicated below:"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                android:layout_margin="15dp"/>
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I/We has/have not been a seed grower in the past and I/We has/have adequate storage facilities to handle the resultant seed."
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,6 +132,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_margin= "10dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -134,38 +143,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="3dp"
-                            android:text="Select crop variety:"
-                            android:textColor="#000"
-                            />
-
-                        <Spinner
-                            android:id="@+id/crop_variety_sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:layout_marginTop="10dp"
-                            android:spinnerMode="dropdown"
-                            style="@style/Widget.AppCompat.Spinner.Underlined"
-                            android:entries="@array/crops"/>
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="5dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginStart="3dp"
-                            android:text="Enter number of hectares:"
+                            android:text="If you have been a seed grower before, please enter grower's number:"
                             android:textColor="#000"
                             />
 
                         <EditText
-                            android:id="@+id/hectares_et"
+                            android:id="@+id/growers_number_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
@@ -183,81 +166,22 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="3dp"
-                            android:text="Enter source of seed:"
+                            android:text="The field where I intend to grow the seed crop was previously under (give its cropping history for the last 3 seasons or years) crops/fallows:"
                             android:textColor="#000"
                             />
 
                         <EditText
-                            android:id="@+id/seed_source_et"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:layout_marginStart="0dp"
-                            android:inputType="text"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="I/We has/have not been a seed grower in the past and I/We has/have adequate storage facilities to handle the resultant seed."
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:layout_margin="15dp"/>
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_margin= "5dp">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_margin= "10dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="5dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginStart="3dp"
-                            android:text="If you have been a seed grower before, enter grower number:"
-                            android:textColor="#000"
-                            />
-
-                        <EditText
-                            android:id="@+id/grower_number_et"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:layout_marginStart="0dp"
-                            android:inputType="number"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="5dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginStart="3dp"
-                            android:text="Field History: Enter Last 3 crops of the season:"
-                            android:textColor="#000"
-                            />
-
-                        <EditText
-                            android:id="@+id/last_crops_et"
+                            android:id="@+id/fallows_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
                             android:layout_marginStart="0dp"
                             android:inputType="textMultiLine"/>
                     </LinearLayout>
+
+
+
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -273,7 +197,7 @@
                             android:textColor="#000"
                             />
                         <Spinner
-                            android:id="@+id/adequate_isolation_sp"
+                            android:id="@+id/adequate_isolation_spinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -296,11 +220,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="3dp"
-                            android:text="Do you have adequate labor to carry out all farm operations in a timely manner:"
+                            android:text="Do you have adequate labor to carry out all farm operations in a timely manner?"
                             android:textColor="#000"
                             />
                         <Spinner
-                            android:id="@+id/farm_operations_sp"
+                            android:id="@+id/farm_operations_spinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -326,7 +250,7 @@
                             android:textColor="#000"
                             />
                         <Spinner
-                            android:id="@+id/certified_seed_sp"
+                            android:id="@+id/certified_seed_spinner"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -338,7 +262,7 @@
 
                     </LinearLayout>
                     <EditText
-                        android:id="@+id/date_text_view"
+                        android:id="@+id/date_text_view_producer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="07/14/2020"
@@ -354,6 +278,7 @@
 
 
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -361,7 +286,7 @@
                 >
 
                 <Button
-                    android:id="@+id/submit_button"
+                    android:id="@+id/submit_button_producer"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -370,7 +295,7 @@
                     style="@style/Button"/>
 
                 <Button
-                    android:id="@+id/save_button"
+                    android:id="@+id/save_button_producer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -380,7 +305,7 @@
 
             </LinearLayout>
             <Button
-                android:id="@+id/cancel_btn"
+                android:id="@+id/cancel_btn_producer"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
